@@ -1,4 +1,2 @@
-require('../css/main.css');
-
-window.$ = require('jquery');
+import _ from 'lodash';
 require('./main.js');
