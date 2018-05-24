@@ -1,2 +1,218 @@
 @import "vars.scss";
 @import "basic.scss";
+@import "d3.scss";
+
+#content {}
+
+#branding,
+#about {
+    position: absolute;
+    left: 20px;
+    z-index: 1000;
+    p {
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 2px 2px 0px $bc;
+        margin: 0;
+    }
+}
+
+#branding {
+    top: 20px;
+    width: 100px;
+    font-style: italic;
+    cursor: pointer;
+}
+
+#about {
+    width: 28px;
+    height: 28px;
+    bottom: 20px;
+    border: 2px solid $bc;
+    p {
+        padding: 5px 10px 5px 7px;
+        text-align: center;
+    }
+}
+
+#god {
+    z-index: 900;
+    position: absolute;
+    right: 40vw;
+    top: -30vw;
+    width: 30vw;
+    height: 30vw/4*3;
+    background-image: url("./media/god-cloud.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    animation: hover 4s ease-in-out alternate infinite;
+}
+
+#world {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100vh;
+    display: block;
+    border-radius: 100%;
+    height: 90vw;
+    width: 90vw;
+    min-height: 600px;
+    min-width: 600px;
+    margin: 0 auto;
+    background: radial-gradient(circle at 65% 20%, #5cabff, #102110);
+    cursor: pointer;
+    animation: rotation 20s linear infinite;
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+    #world {
+        min-width: 0;
+        min-height: 0;
+    }
+}
+
+#stories {
+    display: none;
+    z-index: 800;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.story {
+    position: absolute;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.98);
+    border: 3px solid $lblue;
+    cursor: pointer;
+    h2 {
+        margin: 0;
+        color: $lblue;
+        font-size: 1.1em;
+    }
+    &:nth-child(1) {
+        top: 30vh;
+        left: 22vw;
+    }
+    &:nth-child(2) {
+        top: 55vh;
+        left: 40vw;
+    }
+    &:nth-child(3) {
+        top: 45vh;
+        right: 10vw;
+    }
+    &:nth-child(4) {
+        top: 70vh;
+        left: 5vw;
+    }
+    &:nth-child(5) {
+        bottom: 15vh;
+        left: 60vw;
+    }
+    .line {
+        position: absolute;
+        height: 50px;
+        width: 83px;
+        bottom: 0;
+        border-top: 3px solid #3d95ce;
+    }
+    .line-right {
+        right: 0;
+        transform: rotate(45deg);
+        transform-origin: -20px 128px;
+    }
+    .line-left {
+        left: 0;
+        transform: rotate(-45deg);
+        transform-origin: 105px 130px;
+    }
+}
+
+#show-story {
+    display: none;
+    margin-top: 50px;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 36%; // aspect ratio see d3_story
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+#insights {
+    display: none;
+    z-index: 800;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 60vh;
+    text-align: center;
+}
+
+#insights-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80vw;
+}
+
+.insight {
+    width: 25vw;
+    margin: 0 0.5vw;
+    display: inline-block;
+    border: 3px solid $lblue;
+    background-color: rgba(255, 255, 255, 0.8);
+    p {
+        text-style: italic;
+    }
+}
+
+// animations
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes hover {
+    0% {
+        transform: translate(0, 0)
+    }
+    25% {
+        transform: translate(1px, -3px)
+    }
+    50% {
+        transform: translate(-2px, 2px)
+    }
+    75% {
+        transform: translate(1px, -1px)
+    }
+    100% {
+        transform: translate(0px, 2px)
+    }
+}

@@ -1,6 +1,12 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// static files
+const copyPatterns = [
+    { from: "./src/media", to: "./media" },
+    { from: "./src/data", to: "./data" }
+]
 
 const extractSass = new ExtractTextPlugin({
     filename: "styles.css"
@@ -21,7 +27,8 @@ module.exports = {
             template: './src/index.html',
             hash: true
         }),
-        extractSass
+        extractSass,
+        new CopyWebpackPlugin(copyPatterns)
     ],
     module: {
         rules: [{

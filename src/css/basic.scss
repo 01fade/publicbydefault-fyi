@@ -1,7 +1,18 @@
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
 body {
-    background-color: $bg;
+    margin: 0;
+    height: 100%;
+    overflow: auto;
+    cursor: crosshair;
+    background: linear-gradient(#DCF0F6, #fff);
+    font-family: $font;
     h1 {
         color: $bc;
         background-color: #fff;
+        font-family: $font;
     }
 }

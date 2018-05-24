@@ -1,0 +1,35 @@
+.zoom {
+    cursor: move;
+    fill: none;
+    pointer-events: all;
+}
+
+.tick:nth-child(4n) {
+    text {
+        fill: red;
+    }
+}
+
+.axis--y {
+    opacity: 0.3;
+    .domain {
+        opacity: 0.2;
+    }
+}
+
+.dot {
+    fill: blue;
+    &.c0 {
+        fill: red;
+    }
+    &.c1 {
+        fill: green;
+    }
+    &.c2 {
+        fill: blue;
+    }
+}
+
+.dotContext {
+    fill: black;
+}
