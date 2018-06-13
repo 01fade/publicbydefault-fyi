@@ -1,5 +1,8 @@
-import _ from 'lodash';
-import {TimelineLite} from "gsap";
-import CSSPlugin from "gsap/CSSPlugin";
-import bezierPlugin from "gsap/bezierPlugin";
+// loaded third
 require('./main.js');
+
+if (module.hot) {
+  module.hot.accept('./main.js', function() {
+    console.log('Changes to main.js');
+  });
+}

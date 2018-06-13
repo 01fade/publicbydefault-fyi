@@ -1,35 +1,198 @@
-.zoom {
-    cursor: move;
-    fill: none;
-    pointer-events: all;
-}
-
-.tick:nth-child(4n) {
-    text {
-        fill: red;
+.story-content>.timeline {
+    width: 100vw;
+    left: 0;
+    margin: 0 0 100px;
+    .axis--y {
+        .tick {
+            text,
+            line {
+                opacity: 0.6;
+            }
+        }
+        .domain {
+            display: none;
+            opacity: 0.2;
+        }
+    }
+    .cat1 {
+        fill: rgb(255, 0, 150);
+    }
+    .cat2 {
+        fill: rgb(10, 170, 60);
+    }
+    .line.cat1 {
+        stroke: rgb(255, 0, 150);
+        stroke-dasharray: 3, 3;
+        ;
+    }
+    .line.cat2 {
+        stroke: rgb(10, 170, 60);
+        stroke-dasharray: 3, 3;
+    }
+    .walmart {
+        fill: rgb(0, 0, 255);
+    }
+    .albertsons {
+        fill: rgb(255, 0, 0);
+    }
+    .costco {
+        fill: rgb(20, 200, 20);
+    }
+    .aldi,
+    .walgreens {
+        fill: black;
+    }
+    .highlight {
+        fill: $bright;
+        fill-opacity: 0.3;
     }
 }
 
-.axis--y {
-    opacity: 0.3;
-    .domain {
+.story-content {
+    span {
+        padding: 0px 3px;
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+    .cat1 {
+        background-color: rgba(255, 0, 150, 0.4);
+    }
+    .cat2 {
+        background-color: rgba(10, 170, 60, 0.3);
+    }
+    .walmart {
+        background-color: rgba(0, 0, 255, 0.3);
+    }
+    .albertsons {
+        background-color: rgba(255, 0, 0, 0.4);
+    }
+    .costco {
+        background-color: rgba(20, 200, 20, 0.4);
+    }
+}
+
+.axis--x {
+    .domain,
+    line {
+        stroke: #6f8483;
+    }
+    text {
+        fill: #6f8483;
+    }
+}
+
+svg.brush1,
+svg.brush2,
+svg.brush3,
+svg.brush4,
+svg.brush5 {
+    margin: 20px 0 20px;
+    .axis--y {
+        .tick {
+            text,
+            line {
+                opacity: 0.6;
+            }
+        }
+        .domain {
+            display: none;
+            opacity: 0.2;
+        }
+    }
+
+    .rect {
+        fill: #6f8483;
+    }
+
+    .msg {
+        fill: #000;
+        text-decoration: underline;
+    }
+
+    .context {
+        .highlight {
+            fill: $bright2;
+            opacity: 1;
+        }
+        .normal {
+            fill: #000;
+            opacity: 0.5;
+        }
+    }
+
+    .zoom {
+        cursor: move;
+        fill: #3dcffb;
+        opacity: 0.01;
+        pointer-events: all;
+    }
+
+    .selection {
+        fill: #111;
         opacity: 0.2;
     }
-}
 
-.dot {
-    fill: blue;
-    &.c0 {
-        fill: red;
-    }
-    &.c1 {
-        fill: green;
-    }
-    &.c2 {
-        fill: blue;
+    .handle {
+        opacity: 0.3;
     }
 }
 
-.dotContext {
-    fill: black;
+svg .axisbg {
+    fill: $sky;
+}
+
+svg.packed4 {
+    padding: 60px 0 0 0;
+    background-image: url('media/calista_tongue.png');
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position: top center;
+}
+
+svg.packed1,
+svg.packed2,
+svg.packed3,
+svg.packed4,
+svg.packed5 {
+    .node {
+        cursor: pointer;
+        transition: fill 0.5s;
+        fill: #fff;
+        fill-opacity: 0.8;
+    }
+
+    .node--tag:hover {
+        fill: #ffd3da;
+        fill-opacity: 0.9;
+    }
+
+    .node--leaf {
+        fill: none;
+    }
+
+    .smalllabel {
+        font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .label {
+        font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-shadow: 0 1px 0 $sky, 1px 0 0 $sky, -1px 0 0 $sky, 0 -1px 0 $sky;
+        tspan {
+            text-anchor: middle;
+        }
+    }
+
+    .label,
+    .smalllabel {
+        text-anchor: middle;
+    }
+
+    .node--root {
+        fill: none;
+    }
+
+    .label,
+    .node--root,
+    .node--leaf {
+        pointer-events: none;
+    }
 }
