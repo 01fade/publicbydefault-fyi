@@ -5,16 +5,16 @@ module.exports = {
             const target = arr[i].transactions[0].target.firstname;
             const order = arr[i].type === "payment" ? [actor, target] : [target, actor];
             const paymentText = order[0] + " paid " + order[1];
-            const time = moment(arr[i].created_time).subtract(7, "hours").format("MMMM DD, hh:mm a");
+            const time = moment.utc(arr[i].created_time).utcOffset(-5).format("MMMM DD, hh:mm a");
             const floatClass = order[0].toLowerCase() === female ? "female" : "male";
 
             let $commentsDiv = $("<div>", { "dataid": i, class: floatClass + " comments" }).css("display", "none");
             for (var j = 0; j < arr[i].comments.length; j++) {
                 const current = arr[i].comments[j];
-                const cTime = moment(current.created_time).subtract(7, "hours");
+                const cTime = moment.utc(current.created_time).utcOffset(-5);
                 let cTimeF = cTime.format("hh:mm a");
                 const index = j > 0 ? (j - 1) : 0;
-                const prevD = moment(arr[i].comments[index].created_time).subtract(7, "hours").dayOfYear();
+                const prevD = moment.utc(arr[i].comments[index].created_time).utcOffset(-5).dayOfYear();
                 if (j === 0 || prevD != cTime.dayOfYear()) {
                     $commentsDiv.append($("<p>", { class: "day" }).text(cTime.format("MMMM DD")));
                 }

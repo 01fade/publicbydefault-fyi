@@ -122,51 +122,56 @@
         </div>
         <!-- basics -->
         <div id="god" style="display: none"><img src="media/god-cloud.png" alt="Venmo god"></div>
-        <div id="world" style="display: none"></div>
+        <div id="world" style="display: none">
+            <div id="small-stories">🌿🌽💞🥤🛍️</div>
+        </div>
         <!-- stories -->
         <div id="stories" style="display: none">
-            <div class="story-link-container right">
-                <div id="story1" class="story-link">
+            <div id="story1" class="story-link-container right">
+                <div class="story-link">
                     <h2>The Drug Dealer</h2>
                     <div class="line"></div>
                 </div>
-                <img src="media/dealer.png" alt="">
+                <img class="story-link" src="media/dealer.png" alt="">
             </div>
-            <div class="story-link-container left">
-                <div id="story2" class="story-link">
+            <div id="story2" class="story-link-container left">
+                <div class="story-link">
                     <h2>The Food Cart</h2>
                     <div class="line"></div>
                 </div>
-                <img src="media/elote.png" alt="">
+                <img class="story-link" src="media/elote.png" alt="">
             </div>
-            <div class="story-link-container left">
-                <div id="story3" class="story-link">
+            <div id="story3" class="story-link-container left">
+                <div class="story-link">
                     <h2>Two Love Stories</h2>
                     <div class="line"></div>
                 </div>
+                <img class="story-link" src="media/love.png" alt="">
             </div>
-            <div class="story-link-container right">
-                <div id="story4" class="story-link">
+            <div id="story4" class="story-link-container right">
+                <div class="story-link">
                     <h2>YOLO</h2>
                     <div class="line"></div>
                 </div>
+                <img class="story-link" src="media/yolo.png" alt="">
             </div>
-            <div class="story-link-container left">
-                <div id="story5" class="story-link">
+            <div id="story5" class="story-link-container left">
+                <div class="story-link">
                     <h2>All American</h2>
                     <div class="line"></div>
                 </div>
+                <img class="story-link" src="media/american.png" alt="">
             </div>
             <div id="hello" class="container">
                 <p>Enter different <b><span class="story">stories</span></b> by clicking on them at the bottom.</p>
                 <p>See what one can learn about culture and human life by clicking on the <b><span class="god">Venmo god</span></b>.</p>
-                <p>There is that widespread notion of <b>"I have nothing to hide"</b>. Hopefully the stories and insights on this website help us ask ourselved more often <b>"Do I really need to share this?"</b></p>
+                <p>There is that widespread notion of <b>"I have nothing to hide"</b>. Hopefully the stories and insights on this website help us ask ourselved more often <br><b>"Do I really need to share this?"</b></p>
             </div>
         </div>
         <div id="story-content1" class="story-content container" style="display: none">
-            <h1>The Dealer</h1>
-            <p>Judging by the name of the dealer, one can deduce that the person is a male whose last name is of Spanish origin. Some of the dealer's customers have profile images that are Facebook links that are public which suggests that he lives and sells his goods in/near Santa Barbara, CA.</p>
-            <p>He had a total of <span class="total">943</span> transactions in 2017.</p>
+            <h1>The Drug Dealer</h1>
+            <p>His first name is male, his last name is of <b>Spanish origin</b>. Some of the dealer's customers have profile picture url that point to their public Facebook profiles. From that information I place his home base to be in/near <b>Santa Barbara, CA</b>.</p>
+            <p class="sidenote">Note: All public transations include the URLs to each person's profile picure. Some URLs include the Facebook ID, so one can see their public information at facebook.com/FACEBOOKID.</p>
             <div>
                 <svg class="smallsvg" viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet">
                     <text y="80" dy="0.5em" style="text-anchor: end">
@@ -181,23 +186,27 @@
                     <rect class="out" x="975.609756" y="50" width="24.390244" height="15" />
                 </svg>
             </div>
-            <p>Below there is a timeline of transactions assigned to the tags shown above. Every box represents a transaction.</p>
-            <div class="filter"></div>
-            <p>
-                <button id="show-msg" class="">Show messages</button>
-                <!-- <button id="zoomin">Zoom in</button> -->
-                <!-- <button id="zoomout">Zoom out</button> -->
+            <p>He had a total of <b>943</b> transactions in 2017.</p>
+            <div class="point-down">👇</div>
+            <div class="filter">Filter: </div>
+            <div id="drugs" class="timeline"></div>
+            <p>As you explored the filters, you probably noticed that <b>cbd/CBD</b> comes up a lot, 150 times to be exact. It's the abbreviation of "Cannabidiol [...] one of at least 113 cannabinoids identified in cannabis" (<a href="https://en.wikipedia.org/wiki/Cannabidiol" target="_blank">Wikipedia</a>). <b>delivery</b>, <b>order</b>, 💊 🌳, 🌲 <b>headband</b>, "an exotic strain of marijuana" (<a href="https://www.urbandictionary.com/define.php?term=Headband" target="_blank">Urban Dictionary</a>) <span class="cat0">incoming</span> </p>
+            <p>Even argue that <b>grocery</b> refers to weed or drugs considering the frequency of the message (36x) from 23 different people.</p>
+            <p>Seems like business is going well. He seems to have a helping hand who made 3 payments to the drug dealer:
+                <br>"Joey's sales"
+                <br>"3/22-3/23 sales"
+                <br>"CBD Joey's plus Ryan's sales"
             </p>
-            <p>Tip: Double-click to zoom in. To zoom out hold the shift key while clicking.</p>
-            <svg class="brush1"></svg>
+            <p>His friend [img] actually sent him 19 payments in total throughout the year - with a lot of references to Cannabis.</p>
+            <p>The public transactions of the Drug Dealer that I was able to capture were made private since. Good job! 👍 But that is exactly the dilemma, once your information is public it's pretty damn difficult to get it back!</p>
             <div class="clear"></div>
             <button class="backstory small">
                 < all stories</button>
         </div>
         <div id="story-content2" class="story-content container" style="display: none">
             <h1>The Food Cart</h1>
-            <p>No doubt this food cart near the University of California Santa Barbara is popular. Selling elotes, mangos, tostilocos, chicharrones and more. Its most frequent customer, came here 34 times in 2017, almost every week except for the summer (July - September) and always around the same time. How convenient is it that you can pay for your delicious snacks via Venmo, especialy when gets crowded. In this case the everybody can learn when you're craving what food and where to meet you.</p>
-            <p>The cart vendor had a total of 8026 transactions in 2017.</p>
+            <p>No doubt this food cart is popular. Students from the University of California Santa Barbara get their fix of elotes, mangos, raspados, tostilocos, chicharrones etc here.</p>
+            <p>The cart vendor had a total of <b>8026</b> transactions in 2017.</p>
             <div>
                 <svg class="smallsvg" viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet">
                     <text y="80" dy="0.5em" style="text-anchor: end">
@@ -212,7 +221,23 @@
                     <rect class="out" x="997.508099" y="50" width="2.491901" height="15" />
                 </svg>
             </div>
-            <p>Here is a simulation of all the 8006 payments that our Elote guy received.</p>
+            <p>His most popular item is "elote". In case you don't know what that is:</p>
+            <div id="elote">
+                <div class="bgimg">🌽</div>
+                <blockquote>
+                    "<b>Elote</b> (Nahuatl: ēlōtl [ˈeːloːt͡ɬ]),
+                    <br>or corn on the cob is a popular street food in Mexico, although it is frequently served at home prepared in the same way (boiled or grilled in husk).[1] It is customarily consumed on a stick, or by grasping the husk of the cob that has been pulled down to form a handle". Condiments such as salt, chili powder, butter, cheese, lemon juice or lime juice, mayonnaise, and sour cream (or crema) are usually added to the elote.
+                    <br>
+                    <br>Another way of presenting elotes is by serving the cut kernels in a bowl. In the southern and central areas of Mexico, people call this esquites instead of elote. Any of the toppings above are added to the corn and it is then eaten with a spoon.
+                    <br>
+                    <br>In the southern and central urban zones of Mexico, ready-to-eat boiled elotes are usually sold by street vendors or in stands, but in the rest of Mexico elotes are more frequently sold in stores or restaurants. The elotes are boiled in water or grilled over coals and condiments of the customer's choosing are added when sold."
+                    <br>
+                    <br>
+                    <center>Quote from a transaction from April 13, 2017 3:27pm
+                        <br><br>🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽</center>
+                </blockquote>
+            </div>
+            <p>The food cart's most frequent customer, came here 34 times in 2017, almost every week except in the summer (July - September) and always around the same time. How convenient is it that you can pay for your delicious snacks via Venmo, especialy when it gets crowded. In this case everybody can learn when you're craving what food and where to find you.</p>
             <div class="simulation food"></div>
             <p>
                 <button id="playfood" class="small play">Play</button>
@@ -233,7 +258,7 @@
             <div class="clear"></div>
             <h2>A happy story</h2>
             <p style="font-size: 2em">💖</p>
-            <p>In this story you can witness how Breezy and Pedro – again two placeholder names – start to get to know each other. After exchanging messages every day, sometimes in real time, for about a week (October 20-28), they decided to move on from Venmo. Be sure to read till the very last comment.</p>
+            <p>In this story you can witness how Breezy and Pedro – two placeholder names – start to get to know each other in public. They discuss specific transaction amounts and their living situation in Clute, TX and Houston, TX. After exchanging messages every day, sometimes in real time, for about a week (October 20-28), they decided to move on from Venmo. I hope it had a happy ending!</p>
             <p>Pedro and Breezy are also fairly fresh users, having registered on September 6 and October 8 respectively.</p>
             <div id="happy-love"></div>
             <div class="clear"></div>
@@ -243,7 +268,7 @@
         <div id="story-content4" class="story-content container" style="display: none">
             <h1>YOLO</h1>
             <p>You only live once, right?</p>
-            <p>This young female with a name of Greek origin (the follower of a Greek Goddess) certainly enjoys life to the fullest. In 2017, she had 2033 transactions on Venmo.</p>
+            <p>This young female with a name of <b>Greek origin</b> (the follower of a Greek Goddess) certainly enjoys life to the fullest. In 2017, she had <b>2033</b> transactions on Venmo.</p>
             <div>
                 <svg class="smallsvg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
                     <image xlink:href="media/calista.png" width="100" y="0" x="204.303984" />
@@ -260,8 +285,8 @@
                 </svg>
             </div>
             <p>It's not clear where she lives but some of the people in her network live in Texas and Mexico City.</p>
-            <p class="sidenote">Note: All the public transations include an actor and a target and each of them also entails the url to their profile picure, so by taking the Facebook ID from that URL, one can visit their Facebook profile at facebook.com/"facebookid" and see all the public information they have.</p>
-            <p>Our YOLO girl just looooves <span>Coke</span> (280x), <span>🍹</span> (248x), <span>🍕</span> (209x) and <span>🍩</span> (123x). She shared her 280 Cokes with 37 people last year.</p>
+            <p class="sidenote">Note: All public transations include the URLs to each person's profile picure. Some URLs include the Facebook ID, so one can see their public information at facebook.com/FACEBOOKID.</p>
+            <p>Our YOLO girl just looooves <b>Coke</b> (280x), 🍹 (248x) and 🍕 (209x). She shared her 280 Cokes with 37 people last year.</p>
             <svg class="packed4"></svg>
             <div class="clear"></div>
             <button class="backstory small">
@@ -273,8 +298,10 @@
             <p>They own a <b>dog</b> and a <b>car</b> which they prefer to fuel at Chevron almost every two weeks. They really like <b>pizza</b>, their favorite is at Shakey's, occasionally they also eat Asian and German food.</p>
             <p>And they are paying a <b>loan</b> - 20 transactions last year to be exact, usually paid Thursday, Friday or Saturday. It's always the same person making <span class="cat1">payments</span> to the other, not always in full and also <b>not constistently</b> at the beginning or the end of the month. 3 transactions are <span class="cat2">charges</span>, meaning the person who pays the loan requests money - loan refund.</p>
             <div id="loan" class="timeline"></div>
+            <div class="clear"></div>
             <p>Our married couple is a great example to show how your transactions can reveal a lot of things about you, including some life patterns. By far the most transactions are for grocery stores – 25 x <span class="walmart">Walmart</span>, 19 x <span class="albertsons">Albertsons</span> and 15 x <span class="costco">CostCo</span>. They went to <span>Aldi</span> and <span>Walgreens</span> a few times. They go shopping more than once a week, almost never on Wednesday or Sunday.</p>
             <div id="groceries" class="timeline"></div>
+            <div class="clear"></div>
             <p>Looking at all transactions, I believe that the both of them live in <b>Orange County</b>.</p>
             <p>There are 8 transactions including the term <a href="https://www.google.com/search?q=sdg%26e&oq=SDG%26E" target="_blank">SDG&E</a>. San Diego Gas & Electric (SDG&E) "provides natural gas and electricity to San Diego County and southern Orange County in southwestern California". They visited a theater in the region (<a href="https://www.google.com/search?q=regal+eastvale" target="_blank">Regal Eastvale</a>), "Chicago Ribs" appears 5 times (could be a reference to "Chicago for Ribs" restaurant that has <a href="http://www.chicagoforribs.com/locations.html" target="_blank">3 locations</a> (Los Angeles, San Pedro and Redondo Beach), <a href="https://www.google.com/maps/?q=lax" target="_blank">LAX</a>, the airport in Los Angeles, is mentioned twice about one month apart. Other transactions that support this assumption include the <a href="http://www.in-n-out.com/docs/default-source/downloads/Locations_Printable.pdf">In n out</a>, <a href="https://aldi.us/stores/" target="_blank">Aldi</a> (within California only in the south), and "Banfield Pet Hospital".</p>
             <div class="clear"></div>

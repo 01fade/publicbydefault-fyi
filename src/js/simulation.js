@@ -42,15 +42,13 @@ module.exports = {
                 self.pause();
             }
         });
-        let orders = _.filter(origData, function(o) {
-            return (o.target === 9094113 && o.type === "payment") || (o.actor === 9094113 && o.type === "charge");
-        })
-        let newArr = this.prepareData(orders);
+        let newArr = this.prepareData(origData);
         let app = new PIXI.Application({
-            width: Math.min(window.innerWidth, 650), // default: 800
-            height: 400, // default: 600
+            width: Math.min(window.innerWidth, 680), // default: 800
+            height: 300, // default: 600
             antialias: true, // default: false
-            transparent: true, // default: false
+            backgroundColor: 0x56c0e3,
+            transparent: false, // default: false
             resolution: 1 // default: 1
         });
         //Add the canvas that Pixi automatically created for you to the HTML document
@@ -61,7 +59,7 @@ module.exports = {
             app.renderer.resize(Math.min(window.innerWidth, 650), 400);
         })
 
-        this.addingStuff(app, orders);
+        this.addingStuff(app, origData);
     },
     addingStuff: function(app, orders) {
         let Application = PIXI.Application,

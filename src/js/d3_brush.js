@@ -30,7 +30,6 @@ module.exports = {
 
         var storyContainer = $("#" + div);
         var filtercontainer = storyContainer.find(".filter");
-        // filtercontainer.empty();
         for (var i = 0; i < filter.length; i++) {
             filtercontainer.append($("<button>", { id: filter[i].tag, class: "small" }).text(filter[i].tag));
             // move "other" to end
@@ -221,8 +220,7 @@ module.exports = {
                 .attr("x", function(d) { return x(d.date); })
                 .attr("y", function(d) { return y(d.hour); });
 
-            // var showMsg = $("#show-msg").hasClass("checked");
-            var showMsg = true;
+            var showMsg = $("#show-msg").hasClass("checked");
             // Append text
             group.append("text")
                 .style("opacity", function() { return (showMsg === true) ? 0.7 : 0; })

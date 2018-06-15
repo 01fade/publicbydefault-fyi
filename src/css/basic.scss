@@ -7,9 +7,9 @@ body {
     margin: 0;
     height: 100%;
     overflow: auto;
-    cursor: crosshair;
     background: linear-gradient(130deg, $sky 30%, #f7fdfe 75%), linear-gradient(90deg, $sky 20%, #fff 45%);
     background-color: #f7fdfe;
+    font-size: 18px;
     font-family: $font;
 }
 
@@ -43,7 +43,9 @@ button {
         font-size: 0.8em;
         border-radius: 5px;
         padding: 3px 7px 3px 5px;
+        margin: 0 2px;
         background-color: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(200, 200, 200, 0.5);
         &.active {
             background-color: $bright;
         }

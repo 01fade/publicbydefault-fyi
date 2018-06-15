@@ -1,19 +1,19 @@
 .story-content>.timeline {
     width: 100vw;
     left: 0;
-    margin: 0 0 100px;
-    .axis--y {
-        .tick {
-            text,
-            line {
-                opacity: 0.6;
-            }
-        }
-        .domain {
-            display: none;
-            opacity: 0.2;
-        }
+    margin: 0;
+    padding: 0;
+    .highlight {
+        fill: $bright;
+        fill-opacity: 0.25;
     }
+    .tooltipbg {
+        fill: $dull;
+        opacity: 0.9;
+    }
+}
+
+#story-content5>.timeline {
     .cat1 {
         fill: rgb(255, 0, 150);
     }
@@ -42,9 +42,14 @@
     .walgreens {
         fill: black;
     }
-    .highlight {
-        fill: $bright;
-        fill-opacity: 0.3;
+}
+
+#story-content1>.timeline {
+    .cat1 {
+        fill: $bc2;
+    }
+    .cat2 {
+        fill: $dblue;
     }
 }
 
@@ -58,6 +63,9 @@
     }
     .cat2 {
         background-color: rgba(10, 170, 60, 0.3);
+    }
+    .cat0 {
+        background-color: rgba(0, 74, 152, 0.25);
     }
     .walmart {
         background-color: rgba(0, 0, 255, 0.3);
@@ -80,24 +88,38 @@
     }
 }
 
+.axis--y {
+    .tick {
+        text,
+        line {
+            opacity: 0.6;
+        }
+    }
+    .domain {
+        display: none;
+        opacity: 0.2;
+    }
+}
+
+.axis--y {
+    .tick {
+        text,
+        line {
+            opacity: 0.6;
+        }
+    }
+    .domain {
+        display: none;
+        opacity: 0.2;
+    }
+}
+
 svg.brush1,
 svg.brush2,
 svg.brush3,
 svg.brush4,
 svg.brush5 {
     margin: 20px 0 20px;
-    .axis--y {
-        .tick {
-            text,
-            line {
-                opacity: 0.6;
-            }
-        }
-        .domain {
-            display: none;
-            opacity: 0.2;
-        }
-    }
 
     .rect {
         fill: #6f8483;
@@ -145,7 +167,7 @@ svg.packed4 {
     background-image: url('media/calista_tongue.png');
     background-repeat: no-repeat;
     background-size: 300px;
-    background-position: top center;
+    background-position: top 20px left 50%;
 }
 
 svg.packed1,
@@ -155,17 +177,18 @@ svg.packed4,
 svg.packed5 {
     .node {
         cursor: pointer;
-        transition: fill 0.5s;
+        transition: fill 0.2s;
         fill: #fff;
         fill-opacity: 0.8;
     }
 
     .node--tag:hover {
-        fill: #ffd3da;
-        fill-opacity: 0.9;
+        fill: #ffeeee;
+        fill-opacity: 0.8;
     }
 
-    .node--leaf {
+    .node--leaf,
+    .node--root {
         fill: none;
     }
 
@@ -186,13 +209,9 @@ svg.packed5 {
         text-anchor: middle;
     }
 
-    .node--root {
-        fill: none;
-    }
-
     .label,
     .node--root,
     .node--leaf {
-        pointer-events: none;
+        // pointer-events: none;
     }
 }

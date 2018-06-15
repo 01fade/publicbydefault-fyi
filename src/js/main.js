@@ -1,5 +1,6 @@
 import story1 from "../data/story1.csv";
 import story2 from "../data/story2.csv";
+import story2top1 from "../data/story2_top1.csv";
 // import story4 from "../data/story4.csv";
 import story4 from "../data/story4_packed.json";
 import story5 from "../data/story5.csv";
@@ -7,31 +8,37 @@ import story5 from "../data/story5.csv";
 import sadlove from "../data/story_putintobank.json";
 import happylove from "../data/story_venmodollar.json";
 
-var $world, $god, $insights, $stories, $storylink, $storycontent, $aboutlink, $intro, $introscreens, $venmoSettings;
-var ww, wh;
-var introIndex = 0;
-var state = "";
-var d3_brush = require('./d3_brush.js');
-var d3_packed = require('./d3_packed.js');
-var chat = require('./chat.js');
-var simulation = require('./simulation.js');
-var d3_timeline = require('./d3_timeline.js');
+var $world, $god, $insights, $stories, $storylink, $storycontent, $aboutlink, $intro, $introscreens, $venmoSettings, $smallstories;
+var ww, wh,
+    introIndex = 0,
+    state = "",
+    d3_brush = require('./d3_brush.js'),
+    d3_packed = require('./d3_packed.js'),
+    chat = require('./chat.js'),
+    simulation = require('./simulation.js'),
+    d3_timeline_week = require('./d3_timeline_week.js'),
+    d3_timeline_day = require('./d3_timeline_day.js');
 
 //without this line, CSSPlugin and AttrPlugin may get dropped by your bundler...
 var plugins = [CSSPlugin];
 
+
+
 function godMode() {
     simulation.pause();
     $storycontent.fadeOut();
+    $smallstories.delay(700).fadeIn();
     $stories.fadeOut(function() {
         let x = ww / 2 - ww * 0.12 / 2; // center - half god width
         let y = wh * 0.05;
         TweenMax.to($god, 0.7, {
             css: { x: x, y: y, z: 0.1, rotationZ: 0.01, force3D: true, scale: 0.7001, cursor: "inherit" },
-            onComplete: function() { $insights.fadeIn(); }
+            onComplete: function() {
+                $insights.fadeIn();
+            }
         });
         TweenMax.to($world, 0.7, {
-            css: { y: wh * 0.3 - 35, cursor: "pointer" },
+            css: { y: $world.height() - 35, cursor: "pointer" },
         });
     });
     $god.removeClass("clickhint");
@@ -39,10 +46,13 @@ function godMode() {
     state = "godMode";
 }
 
+
+
 function worldMode() {
     simulation.pause();
     $insights.animate({ scrollTop: 0 }, 100);
     $storycontent.fadeOut();
+    $smallstories.fadeOut();
     $insights.fadeOut(function() {
         TweenMax.to($world, 0.7, {
             css: { y: 0, cursor: "inherit" },
@@ -59,13 +69,18 @@ function worldMode() {
     state = "worldMode";
 }
 
+
+
 function storyMode(e) {
     let id = (typeof e === "string" || e === undefined) ? e : e.currentTarget.id.replace("story", "story-content");
     $aboutlink.show();
+    $smallstories.delay(700).fadeIn();
     $stories.fadeOut(function() {
         TweenMax.to($world, 0.8, {
-            css: { y: wh * 0.3 - 35, cursor: "pointer" },
-            onComplete: function() { $("#" + id).fadeIn(); }
+            css: { y: $world.height() - 35, cursor: "pointer" },
+            onComplete: function() {
+                $("#" + id).fadeIn();
+            }
         });
         TweenMax.to($god, 0.8, {
             css: { x: ww * 0.87, y: wh * 0.02, z: 0.1, rotationZ: 0.01, force3D: true, scale: 0.5001, cursor: "pointer" },
@@ -76,6 +91,8 @@ function storyMode(e) {
     state = "storyMode";
 }
 
+
+
 function reset() {
     state = "";
     simulation.pause();
@@ -83,8 +100,9 @@ function reset() {
     $storycontent.fadeOut();
     $stories.fadeOut();
     $insights.fadeOut();
+    $smallstories.fadeOut();
     TweenMax.to($world, 0.8, {
-        css: { y: wh * 0.3 }
+        css: { y: $world.height() }
     });
     TweenMax.to($god, 0.8, {
         css: { x: ww / 2, y: -wh * 0.3, scale: 1 },
@@ -143,18 +161,19 @@ function initVars() {
     TweenMax.defaultEase = Power2.easeOut;
     $world = $("#world");
     // origin bottom left
-    TweenMax.set($world, { y: wh * 0.3, display: "block" });
+    TweenMax.set($world, { y: $world.height(), display: "block" });
     $god = $("#god");
     // origin top left
     TweenMax.set($god, { x: ww / 2, y: -wh * 0.3, display: "block" });
     $insights = $("#insights");
     $stories = $("#stories");
-    $storylink = $(".story-link");
+    $storylink = $(".story-link-container");
     $storycontent = $(".story-content");
     $aboutlink = $("#about-link");
     $intro = $("#intro");
     $introscreens = $("#intro-screens");
     $venmoSettings = $("#venmo-settings");
+    $smallstories = $("#small-stories");
 }
 
 function showScreen(e) {
@@ -180,10 +199,10 @@ function showScreen(e) {
             break;
         case 2:
             // TweenMax.to($introscreens, 0.3, { "left": "-200vw" });
-            TweenMax.to($introscreens, 0.3, { x : -2 * ww });
+            TweenMax.to($introscreens, 0.3, { x: -2 * ww });
             var $span = $introscreens.find(".emph span");
-            TweenMax.to($span, 0.5, {scale: 1.2, delay: 0.5});
-            TweenMax.to($span, 0.5, {scale: 1, delay: 1});
+            TweenMax.to($span, 0.5, { scale: 1.2, delay: 0.5 });
+            TweenMax.to($span, 0.5, { scale: 1, delay: 1 });
             n.hide();
             s.fadeIn();
             break;
@@ -216,12 +235,12 @@ document.addEventListener('readystatechange', event => {
         listeners();
 
         // populate the data
-        d3_brush.setup("story-content1", story1);
+        d3_timeline_day.setup("story-content1", story1, "17682208", "Drugs");
         d3_packed.setup("story-content4", story4);
-        simulation.setup("story-content2", story2);
+        simulation.setup("story-content2", story2top1);
         chat.setup("story-content3", [sadlove, happylove]);
-        d3_timeline.setup("story-content5", story5, "Groceries");
-        d3_timeline.setup("story-content5", story5, "Loan");
+        d3_timeline_week.setup("story-content5", story5, "Groceries");
+        d3_timeline_week.setup("story-content5", story5, "Loan");
 
     } else if (event.target.readyState === "complete") {
         console.log("-----------------", "Auf die Plätze, fertig, los!", document.readyState, new Date());
@@ -232,7 +251,8 @@ document.addEventListener('readystatechange', event => {
         //     $intro.fadeIn(10);
         // }
 
-        storyMode("story-content5");
+        // dev go straight to vis
+        storyMode("story-content2");
 
         $("#loading img").delay(1000).fadeOut(function() {
             $("#next").fadeIn();
