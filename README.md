@@ -1,1 +1,3 @@
-# bydefaultpublic-com
+# Public By Default - Website
+
+Work in progress.
