@@ -11,7 +11,7 @@ module.exports = {
     },
     setup: function(div, origData, person, filter) {
         var self = this;
-        console.log("show", div);
+        // console.log("%cshow timeline day " + div, 'color: #00f');
         var container = $("#" + div);
         var origData = _.map(origData, function(element) {
             return _.extend({}, element, self.transformData(element));
@@ -33,73 +33,50 @@ module.exports = {
         this.createSvg(container, filter.toLowerCase(), fData, origData, person);
     },
     createSvg: function(container, id, data, oData, person) {
-
         var w = window.innerWidth,
-            h = 400;
+            h = 300;
 
+        var svgparent = $("#" + id + ".timeline");
         var svg = d3.select("#" + id).append("svg").attr("id", "timeline-" + id),
-            margin = { top: 50, right: 0, bottom: 100, left: 0 },
+            margin = { top: 10, right: 0, bottom: 30, left: 0 },
             xAxisRoom = 0,
+            height = h - margin.top - margin.bottom - xAxisRoom,
             width = w - margin.left - margin.right,
-            height = h - margin.top - margin.bottom - xAxisRoom;
+            thisTimeline = container.find("#timeline-" + id);
 
-        container.find("#timeline-" + id).height(h).width(w);
+        thisTimeline.height(h).width(w);
 
-        var x = d3.scaleTime().range([0, width]),
-            y = d3.scaleLinear().range([height, 0]);
-
-        var xAxis = d3.axisBottom(x)
-            .tickSizeOuter(0)
-            .ticks(3),
-            yAxis = d3.axisRight(y)
-            .tickSizeOuter(0)
-            .tickValues([0, 12, 18, 24])
-            .tickFormat(function(d, i) { return ["Time of Day", "12pm", "6pm", "12am"][i] });
-
+        var x, y, xAxis, yAxis, xAxisEl;
         var bisectDate = d3.bisector(d => d.date).left;
         var parseD = d3.timeParse("%Y-%m-%d");
-        var xStart = parseD("2016-12-21");
-        var xEnd = parseD("2018-01-10");
+        var xStart = parseD("2016-12-20");
+        var xEnd = parseD("2018-01-11");
 
-        x.domain([xStart, xEnd]);
-        y.domain([25, -1]);
-
-        svg.append("defs").append("clipPath")
+        var clipPath = svg.append("defs").append("clipPath")
             .attr("id", "clip")
-            .append("rect")
-            .attr("width", width)
-            .attr("height", height);
+            .append("rect");
 
-        var focus = svg.append("g")
-            .attr("class", "focus")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        var focus = svg.append("g").attr("class", "focus");
 
-        // y axis background
         focus.append("rect")
             .attr("class", "axisbg")
             .attr("width", 30)
             .attr("height", height)
-            .attr("transform", "translate(" + margin.left + "," + (margin.top - 0) + ")");
-
-        // if (id === "weed") {
-        //     // help line for y axis
-        //     focus.append("rect")
-        //         .attr("class", "highlight")
-        //         .attr("x", x(xStart))
-        //         .attr("width", x(xEnd))
-        //         .attr("y", y(18.5))
-        //         .attr("height", y(3)) // 4 units
-        // }
+            .attr("transform", "translate(" + margin.left + "," + 0 + ")");
 
         var rects = focus.append("g");
-        rects.attr("clip-path", "url(#clip)");
 
-        showNewElems(data);
+        var xAxisEl = focus.append("g")
+            .attr("class", "axis axis--x");
 
-        focus.append("g")
-            .attr("class", "axis axis--x")
-            .attr("transform", "translate(0," + (height + xAxisRoom) + ")") // a little room at the bottom
-            .call(xAxis);
+        y = d3.scaleLinear().range([height, 0]);
+
+        yAxis = d3.axisRight(y)
+            .tickSizeOuter(0)
+            .tickValues([0, 12, 18, 24])
+            .tickFormat(function(d, i) { return ["Time of Day", "12pm", "6pm", "12am"][i] });
+
+        y.domain([25, -1]);
 
         // ticks text
         focus.append("g")
@@ -113,20 +90,10 @@ module.exports = {
             .attr("transform", "rotate(-90)");
 
         // ticks line
-        focus.select(".axis--y").selectAll("line").attr("x2", 30);
-
-        // update elements with filter
-        container.find(".filter button").click(function(e) {
-            $(this).siblings().removeClass("active");
-            $(this).addClass("active");
-            data = _.filter(oData, { tag: e.currentTarget.id });
-            showNewElems(data);
-        });
+        focus.select(".axis--y").selectAll("line").attr("x2", 20);
 
         // tooltip
-        var tooltipContext = svg.append("g");
-        tooltipContext.append("rect").attr("class", "tooltipbg");
-        tooltipContext.append("text").attr("class", "tooltiptext").style("text-anchor", "middle").attr("dy", "1.1em");
+        svgparent.prepend($("<div>", {class: "tooltip message"}).css("opacity", 0).append($("<p>").text("'")));
 
         var tooltip = svg.append("g")
             .attr("transform", "translate(0, " + margin.top + ")")
@@ -139,23 +106,71 @@ module.exports = {
             .attr("width", 8)
             .attr("height", 8);
 
-
         // rectangle to capture mouse
-        svg.append("rect")
+        var mouseTracker = svg.append("rect")
             .attr("transform", "translate(0, " + margin.top + ")")
-            .attr("width", width)
-            .attr("height", height)
             .style("fill", "none")
             .style("pointer-events", "all")
             .on("mouseover", function() {
                 tooltip.style("display", null);
-                tooltipContext.style("display", null);
+                svgparent.find(".message").css("opacity", 1);
             })
             .on("mouseout", function() {
                 tooltip.style("display", "none");
-                tooltipContext.style("display", "none");
+                svgparent.find(".message").css("opacity", 0);
             })
             .on("mousemove", mousemove);
+
+        /////////////////////////////////////////////
+
+        function update() {
+            thisTimeline.width(w);
+            width = w - margin.left - margin.right;
+
+            clipPath.attr("width", width).attr("height", height);
+
+            x = d3.scaleTime().range([0, width]);
+            xAxis = d3.axisBottom(x)
+                .tickSizeOuter(0)
+                .ticks(3)
+                .tickFormat(function(date) {
+                    if (d3.timeYear(date) < date) {
+                        return d3.timeFormat('%b')(date);
+                    } else {
+                        return "'" + d3.timeFormat('%y')(date);
+                    }
+                });
+            x.domain([xStart, xEnd]);
+
+            xAxisEl.attr("transform", "translate(0," + (height + xAxisRoom) + ")") // a little room at the bottom
+                .call(xAxis);
+
+            focus.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            rects.attr("clip-path", "url(#clip)");
+
+            showNewElems(data);
+
+            mouseTracker.attr("width", width).attr("height", height);
+
+            // update elements with filter
+            container.find(".filter button").click(function(e) {
+                $(this).siblings().removeClass("active");
+                $(this).addClass("active");
+                data = _.filter(oData, { tag: e.currentTarget.id });
+                showNewElems(data);
+            });
+        }
+
+        update();
+
+        var resizeCheck;
+        $(window).resize(function() {
+            clearTimeout(resizeCheck);
+            resizeCheck = setTimeout(function() {
+                w = window.innerWidth,
+                    update();
+            }, 80);
+        });
 
         function mousemove() {
             var x0 = x.invert(d3.mouse(this)[0]),
@@ -168,19 +183,8 @@ module.exports = {
                 tooltip.select("rect.y")
                     .attr("transform", "translate(" + (x(d.date) - 4) + "," + (y(d.hour) - 4) + ")");
 
-                tooltipContext.select("text")
-                    .attr("transform", "translate(" + width / 2 + "," + 0 + ")")
-                    .text(d.message.replace("\n", " "));
-
-                var bb;
-                tooltipContext.select("text").each(function() { bb = this.getBBox(); });
-                var bw = bb.width + 16,
-                    bh = bb.height + 6;
-
-                tooltipContext.select("rect")
-                    .attr("transform", "translate(" + (width / 2 - bb.width / 2 - 8) + "," + 0 + ")")
-                    .attr("width", bw)
-                    .attr("height", bh);
+                var msg = d.message.replace("\\n", " ");
+                svgparent.find(".message p").html(window.emoji.replace_unified(msg));
             }
         }
 
@@ -207,23 +211,8 @@ module.exports = {
                 .attr("height", 8)
                 .attr("x", function(d) { return x(d.date) - 4; })
                 .attr("y", function(d) { return y(d.hour) - 4; });
-
-            // Append text
-            group.append("text")
-                .attr("class", "msg")
-                .attr("dy", "1em")
-                .attr("dx", 7)
-                .style("font-size", "0.8em")
-                .attr("text-anchor", "start")
-                .merge(dataJoin.select(".msg"))
-                .text(function(d) { return ""; })
-                .attr("transform", function(d) {
-                    return "translate(" + x(d.date) + "," + y(d.hour) + ")";
-                });
             // EXIT
             dataJoin.exit().remove();
-
         }
-
     }
 }

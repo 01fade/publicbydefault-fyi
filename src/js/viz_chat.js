@@ -20,16 +20,17 @@ module.exports = {
                 }
                 const commentClass = current.actor.firstname.toLowerCase() === female ? "female" : "male";
                 $commentsDiv.append($("<div>", { class: commentClass + " comment" })
-                    .append($("<p>").text(current.message))
+                    .append($("<p>").html(window.emoji.replace_unified(current.message)))
                     .append($("<p>", { class: "commentdate" }).text(cTimeF))
                 );
             }
+            var transactionMessage = '"' + arr[i].message.replace(":venmo_dollar:", "💵") + '"';
             const $content = $("<div>", { class: floatClass + " payment" })
-                .append($("<h3>").text('"' + arr[i].message + '"'))
+                .append($("<h3>").html(window.emoji.replace_unified(transactionMessage)))
                 .append($("<p>", { class: "whopaid" }).text(paymentText))
                 .append($("<p>", { class: "date" }).text(time))
                 .append($("<p>", { "dataid": i, class: "commentcount" }).text(arr[i].comments.length + " comments"))
-                .append($("<img>", { src: "media/" + order[0].toLowerCase() + ".png" }));
+                .append($("<div>", { class: order[0].toLowerCase() + " profile" }));
             parent.append($("<div>").append($content));
             if (arr[i].comments.length > 0) {
                 $commentsDiv.append($("<button>", { "dataid": i, class: "small" }).text("close comments"));
@@ -38,10 +39,9 @@ module.exports = {
         }
     },
     setup: function(id, data) {
-        console.log("show", id);
+        // console.log("%cshow " + id, 'color: #00f');
         const sad = _.sortBy(data[0], function(o) { return moment.utc(o.created_time).unix() });
         const happy = _.sortBy(data[1], function(o) { return moment.utc(o.created_time).unix() });
-        // console.log(sad, happy);
         const $sadDiv = $("#sad-love");
         this.addElems($sadDiv, sad, "susana", "gonzalo");
         $sadDiv.find(".commentcount").click(function(e) {

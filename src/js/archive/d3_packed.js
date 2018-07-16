@@ -3,7 +3,7 @@
 
 module.exports = {
     setup: function(div, origData) {
-        console.log("show", div);
+        console.log("show packed", div);
         var storyContainer = $("#" + div);
         const divnum = div.replace("story-content", "");
         this.createSvg(storyContainer, divnum, origData);

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700');
 $bc: #FC0038;
 $bc2: #d64545;
 $bg: #26C1FF;
@@ -11,4 +10,13 @@ $brightred: #ff9a9a;
 $dull: #b8dae4;
 $lgreen: #b7e8b3;
 $lyellow: #f1e27b;
-$font: 'Work Sans', sans-serif;
+$dyellow: #d08b15;
+$yellow: #ecb31c;
+$dgreen: #177d08;
+$font: Helvetica, sans-serif;
+$height: 15px;
+$halfheight: ($height/2);
+$thickness: 105%; // increase to make the line thicker
+$offset: 4px;
+$zigzagbg: #fcfcfc;
+$linecolor: #ccc;

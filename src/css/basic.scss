@@ -1,6 +1,7 @@
 html {
     overflow: hidden;
     height: 100%;
+    background-color: $sky;
 }
 
 body {
@@ -27,6 +28,7 @@ button {
     letter-spacing: 0.05em;
     cursor: pointer;
     border: 0;
+    border: 1px solid rgba(200, 200, 200, 0.5);
     &.big {
         font-size: 1em;
         border-radius: 10px;
@@ -34,7 +36,7 @@ button {
         margin: 0 20px;
     }
     &.medium {
-        font-size: 1em;
+        font-size: 0.9em;
         border-radius: 8px;
         padding: 5px 14px 5px 10px;
         margin: 0 5px;
@@ -45,9 +47,8 @@ button {
         padding: 3px 7px 3px 5px;
         margin: 0 2px;
         background-color: rgba(255, 255, 255, 0.95);
-        border: 1px solid rgba(200, 200, 200, 0.5);
         &.active {
-            background-color: $bright;
+            background-color: $lyellow;
         }
     }
     &:focus {

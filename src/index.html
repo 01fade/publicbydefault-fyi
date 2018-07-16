@@ -3,178 +3,296 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>BY DEFAULT PUBLIC</title>
-    <meta property="og:title" content="BY DEFAULT PUBLIC" />
+    <title>PUBLIC BY DEFAULT - Venmo Stories of 2017</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@hangdothiduc" />
+    <meta property="og:url" content="https://publicbydefault.fyi" />
+    <meta property="og:title" content="PUBLIC BY DEFAULT - Venmo Stories of 2017" />
+    <meta property="og:description" content="Personal stories from the public Venmo feed showing how much personal data users share with the world." />
+    <meta property="og:image" content="http://publicbydefault.fyi/media/publicbydefault.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Matomo -->
+    <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(['disableCookies']);
+    _paq.push(['deleteCookies']);
+    _paq.push(['setCustomUrl', '/' + window.location.hash.substr(1)]);
+    _paq.push(['setDocumentTitle', 'pbd']);
+    _paq.push(['trackPageView']);
+    (function() {
+        var u = "//publicbydefault.fyi/stats/";
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d = document,
+            g = d.createElement('script'),
+            s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'piwik.js';
+        s.parentNode.insertBefore(g, s);
+    })();
+    </script>
 </head>
 
 <body>
     <div id="content">
-        <!-- super basics -->
-        <div id="super-basics">
-            <div id="branding">
-                <p>BY DEFAULT PUBLIC</p>
+        <div id="branding">
+            <p>PUBLIC BY DEFAULT</p>
+        </div>
+        <div id="loading"><img src="media/loading.gif" alt="loading"></div>
+        <!-- basics -->
+        <div id="basics" style="display: none">
+            <div id="perm-venmo-settings-link-out" class="venmo-settings-link">
+                <p id="perm-venmo-settings-link" class="venmo-settings-link">Venmo Privacy Settings</p>
             </div>
-            <div id="about-link" style="display: none">
+            <div id="menu-link">
                 <p>?</p>
+                <div class="menu">
+                    <ul>
+                        <li id="menu-notes-link">Why did I make this?</li>
+                        <li id="intro-link">See Intro (Again)</li>
+                        <li id="privacy-link">Privacy</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <!-- settings steps pop up -->
-        <div id="venmo-settings" style="display: none">
-            <div class="container">
-                <button id="venmo-settings-close" class="medium low">close</button>
-                <h1>Change your settings in the Venmo app</h1>
-                <p>Click on the highlighted areas and your done in 20 seconds! 🖖🏽</p>
-                <p class="ol">1.</p>
-                <p><img src="media/settings1.jpg" alt="step 1"></p>
-                <p class="ol">2.</p>
-                <p><img src="media/settings2.jpg" alt="step 2"></p>
-                <p class="ol">3.</p>
-                <p><img src="media/settings3.jpg" alt="step 3"></p>
-                <p class="ol">4.</p>
-                <p><img src="media/settings4.jpg" alt="step 4"></p>
-                <p class="ol">5.</p>
-                <p><img src="media/settings5.jpg" alt="step 5"></p>
-                <p class="ol">6.</p>
-                <p><img src="media/settings6.jpg" alt="step 6"></p>
-            </div>
+        <div id="sky">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
         </div>
+        <div id="sorry" style="display: none"><b>Soooorry</b>, this content is not intended to be viewed in this resolution - you wouldn't enjoy it! Either change to the portrait orientation or a bigger screen.
+            <br>
+            <br>Thanks for understanding!</div>
         <!-- intro -->
         <div id="intro" class="container" style="display: none">
             <div id="intro-screens">
                 <div class="screen" style="left: 0">
-                    <p>Once upon a time there was an app that made it super easy to send money to your friends, your partner, your roommate, your dealer and many more.</p>
-                    <p class="big">It was called <b>Venmo</b>.</p>
-                    <p class="big">By default
-                        <br>these transactions
-                        <br>are <b>public</b>.</p>
-                    <div id="phone"></div>
+                    <div class="screen-content">
+                        <center><img src="media/flying_money2.gif" alt=""></center>
+                        <h1 style="font-style: italic">PUBLIC BY DEFAULT</h1>
+                        <h2>Venmo Stories of 2017</h2>
+                        <center><img src="media/flying_money2.gif" alt=""></center>
+                    </div>
                 </div>
                 <div class="screen" style="left: 100vw">
-                    <p>The humans of Venmo can change this setting in <a id="venmo-settings-link" href="">a few steps</a>, but many still leave their transactions for the whole world to see.</p>
-                    <div class="example">
-                        <div>
-                            "<span class="hl0">payment_id</span>": #,
-                            <br> "<span class="hl1">permalink</span>": "/story/321publicpage",
-                            <!-- <br> "via": "", -->
-                            <!-- <br> "action_links": {}, -->
-                            <!-- <br> "story_id": "321publicpage098", -->
-                            <br> "<span class="hl0">comments</span>": [...],
-                            <!-- <br> "updated_time": "2018-06-05T18:39:52Z", -->
-                            <br> "<span class="hl0">audience</span>": "public",
-                            <br> "<span class="hl0">actor</span>":
-                            <br> <span class="indent">"username": "first-last-#",</span>
-                            <br> <span class="indent">"picture": "http://...",</span>
-                            <!-- <br> <span>"is_business": false, -->
-                            </span>
-                            <!-- <br> <span>"name": "First Last",</span> -->
-                            <br> <span class="indent">"<span class="hl2">firstname</span>": "First",</span>
-                            <br> <span class="indent">"<span class="hl2">lastname</span>": "Last",</span>
-                            <!-- <br> <span>"cancelled": false, -->
-                            </span>
-                            <br> <span class="indent">"date_created": "YY/MM/DD hr:min",</span>
-                            </span>
-                            <br> <span class="indent">"id": "#"</span>
-                        </div>
-                        <div>
-                            <!-- "transactions": [{ -->
-                            "<span class="hl0">target</span>":
-                            <br> <span class="indent">"username": "first-last-#",</span>
-                            <br> <span class="indent">"picture": "http://...",</span>
-                            <!-- <br> <span>"is_business": false, -->
-                            </span>
-                            <!-- <br> <span>"name": "First Last",</span> -->
-                            <br> <span class="indent">"<span class="hl2">firstname</span>": "First",</span>
-                            <br> <span class="indent">"<span class="hl2">lastname</span>": "Last",</span>
-                            <!-- <br> <span>"cancelled": false, -->
-                            </span>
-                            <br> <span class="indent">"date_created": "YY/MM/DD hr:min",</span>
-                            </span>
-                            <br> <span class="indent">"id": "#"</span>
-                            <!-- <br> }], -->
-                            <br> "<span class="hl1">created_time</span>": "YY/MM/DD hr:min",
-                            <!-- <br> "mentions": [], -->
-                            <br> "<span class="hl1">message</span>": "💸",
-                            <br> "<span class="hl0">type</span>": "payment" or "charge,
-                            <br> "<span class="hl0">likes</span>": [...]
-                        </div>
+                    <div class="screen-content">
+                        <p>Did you know there is an app that makes it super easy to send money to your friends, your partner, your roommate or your drug dealer? </p>
+                        <p class="half">It is called ​<b>Venmo</b>​ and only available in the United States.</p>
+                        <p class="half">On Venmo, all transactions are <b>public by default</b> – anyone can see them, even if they don’t use the app.</p>
+                        <div id="phone"></div>
                     </div>
-                    <p>Check out the <a href="https://venmo.com/api/v5/public?limit=1" target="_blank">latest transaction here</a>.</p>
                 </div>
                 <div class="screen" style="left: 200vw">
-                    <p>2017, there were</p>
-                    <p class="emph"><span>207,984,218</span> public Venmo transactions</p>
-                    <p>And I got them all – all the <b>dates</b>, all the <b>names</b> and all the <b>messages</b>!</p>
-                    <p>Let's see, what I found in that data.</p>
+                    <div class="screen-content">
+                        <p>Venmo users can change this setting in​ ​<a id="venmo-settings-link" class="venmo-settings-link" href="">a few steps</a>, but many still leave their transactions for the whole world to see.</p>
+                        <div class="example">
+                            <div>
+                                "<span class="hl0">payment_id</span>": #,
+                                <br> "<span class="hl1">permalink</span>": "/story/321publicpage",
+                                <br> "<span class="hl0">comments</span>": [...],
+                                <br> "<span class="hl0">audience</span>": "public",
+                                <br> "<span class="hl0">actor</span>":
+                                <br> <span class="indent">"username": "first-last-#",</span>
+                                <br> <span class="indent">"picture": "https://venmopics...",</span>
+                                <br> <span class="indent">"<span class="hl2">firstname</span>": "First",</span>
+                                <br> <span class="indent">"<span class="hl2">lastname</span>": "Last",</span>
+                                <br> <span class="indent">"date_created": "YY/MM/DD hr:min",</span>
+                                <!-- <br> <span class="indent">"id": "#"</span> -->
+                            </div>
+                            <div>
+                                "<span class="hl0">target</span>":
+                                <br> <span class="indent">"username": "first-last-#",</span>
+                                <br> <span class="indent">"picture": "https://graph.facebook...",</span>
+                                <br> <span class="indent">"<span class="hl2">firstname</span>": "First",</span>
+                                <br> <span class="indent">"<span class="hl2">lastname</span>": "Last",</span>
+                                <br> <span class="indent">"date_created": "YY/MM/DD hr:min",</span>
+                                <!-- <br> <span class="indent">"id": "#"</span> -->
+                                <br> "<span class="hl1">created_time</span>": "YY/MM/DD hr:min",
+                                <br> "<span class="hl1">message</span>": "<img src="../media/img-apple-64/1f4b8.png" class="emoji" data-codepoints="1f4b8" title="money_with_wings" />",
+                                <br> "<span class="hl0">type</span>": "payment" or "charge,
+                                <br> "<span class="hl0">likes</span>": [...]
+                            </div>
+                        </div>
+                        <p>To see for yourself, go see the ​data of <a href="https://venmo.com/api/v5/public?limit=1" target="_blank">latest transaction</a> on Venmo​. That URL is live on the Internet for *anyone* to see.</p>
+                    </div>
+                </div>
+                <div class="screen" style="left: 300vw">
+                    <div class="screen-content">
+                        <p>In 2017, there were</p>
+                        <p class="emph"><span>207,984,218</span> public Venmo transactions</p>
+                        <p>And I looked at all of them! By visiting ​<a href="https://venmo.com/api/v5/public?limit=1" target="_blank">this public URL</a>​, I was able to see every name, every date, and every message sent.</p>
+                        <p class="highlight">I used this data to explore <b>the lives of 5 unsuspecting humans</b> who use the Venmo platform.</p>
+                    </div>
                 </div>
             </div>
-            <div id="loading">
+            <div id="screen-navigation">
+                <div id="progress"></div>
                 <p>
-                    <button id="prev" class="medium low">
-                        <<<</button>
-                            <button id="next" class="medium high">>>></button>
-                            <button id="start" class="big high">Yesss</button>
+                    <button id="prev" class="medium low" style="display: none"><span></span>
+                        <br>
+                        <br>
+                    </button>
+                    <button id="next" class="medium high"><span></span>
+                        <br>
+                        <br>
+                    </button>
+                    <button id="start" class="medium high" style="display: none">Meet the humans
+                        <br>of Venmo <img src="../media/img-apple-64/1f449.png" class="emoji" data-codepoints="1f449" title="point_right" /></button>
                 </p>
-                <img src="media/loading.gif" alt="loading">
             </div>
         </div>
-        <div id="about" style="display: none">
-            <p>¹ <a href="https://www.ancestry.com/name-origin?surname=Do">Source</a> (of a different family name)</p>
+        <!-- privacy -->
+        <div id="privacy" class="popup hidden" style="display: none">
+            <button id="privacy-close" class="small low close">close</button>
+            <div class="container">
+                <h1>Privacy On This Site</h1>
+                <p>This <b>site respects the "Do Not Track" request</b> that users can set in their browsers. When enabled nothing is tracked on this site. A browser extension like <b>Ghostery</b> or <b>Privacy Badger</b> that block trackers also prevent users from being tracked on this site. Having both is highly recommended!</p>
+                <br>
+                <p>This <b>site tracks</b> the one page the visitor visited before coming to this site.</p>
+                <p>This <b>site tracks</b> the operating system and browser the visitor uses and the screen size her/his device.</p>
+                <p>This <b>site tracks</b> views on the following pages: Venmo Privacy Settings, the 5 stories, Venmo god.</p>
+                <p><b>All of the above is can't be traced back to any specific person.</b></p>
+                <br>
+                <p>This <b>site doesn't store</b> personally identifiable information about visitors of this site.</p>
+                <p>This <b>site stores</b> the visitor's anonymized IP address on the owner's server (to which only the owner has access to).</p>
+                <p>This <b>site doesn't use</b> cookies.</p>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- project notes -->
+        <div id="project-notes" class="popup hidden" style="display: none">
+            <button id="project-notes-close" class="small low close">close</button>
+            <div class="container">
+                <h1>Why did I make this?</h1>
+                <p>As a designer and developer, I’ve always been interested in data and privacy — specifically, how social media exposes so much of our personal life to so many people, often without us fully understanding how. (My previous project, <a href="https://dataselfie.it" target="_blank">Data Selfie</a>, is a browser extension that shows what Facebook might know about you through various prediction algorithms.)</p>
+                <p>Many products that we use on a daily basis make it more difficult than it should be to protect our privacy, our most personal information. Many of these products share data (publicly) by default. <a href="http://venmo.com" target="_blank">Venmo</a> is an example of one of these products.</p>
+                <p>And what an interesting example! One would think that when it comes to money, privacy by design is of greater importance and higher demand. One would be disappointed in this particular case <img src="../media/img-apple-64/1f645-1f3fb-200d-2640-fe0f.png" class="emoji" data-codepoints="1f645-1f3fb-200d-2640-fe0f" title="woman-gesturing-no" />.</p>
+                <p>I think it's problematic that there is a public feed which includes real names, their profile links (to access past transactions), possibly their Facebook IDs and essentially their network of friends they spend time with. And all of this is so easy to access! I believe this could be designed better. Why include all this information, when essentially the only interesting part is the message? <img src="../media/img-apple-64/1f64e-1f3fb-200d-2640-fe0f.png" class="emoji" data-codepoints="1f64e-1f3fb-200d-2640-fe0f" title="woman-pouting" /> If you – as a company – actually care about your users and their privacy you would ask this kind of questions.</p>
+                <p>So, if companies don't care, I think <i>WE</i> have to take action <img src="../media/img-apple-64/1f4aa-1f3fd.png" class="emoji" data-codepoints="1f4aa-1f3fd" title="muscle" /><img src="../media/img-apple-64/270a-1f3fd.png" class="emoji" data-codepoints="270a-1f3fd" title="fist" />!</p>
+                <p>When you think of your transactions, you might think ​<b>"I have nothing to hide."​</b> But after spending time with these stories and insights, perhaps you will ask ​<b>"Do I really need to share this?"</b> and invest a few seconds to <a id="venmo-settings-link" class="venmo-settings-link" href="">change your settings on Venmo</a> and on other services.</p>
+                <p>Hopefully companies will one day put user data protection first, either pressured by regulation or by us users. For now, we have to be proactive and protect our pricacy.</p>
+                <h2>Data</h2>
+                <p>I used the <a href="https://venmo.com/api/v5/public?limit=1" target="_blank">Public Venmo API</a> to gather and save all public transactions from 2017. There were 207,984,218 transactions. Anybody can click and access the URL of the Public Venmo API! You can, too: <a href="https://venmo.com/api/v5/public?limit=1" target="_blank">click this to see data from the Public Venmo API!</a></p>
+                <p>You will see the data for the most recent public transaction on Venmo. This includes first and last names, profile picture, the time of the transaction, the message and more.</p>
+                <p>The blog post by Dan Gorelick called <a href="http://danielgorelick.com/scraping-venmo/" target="_blank">'"Hacking" the public Venmo API'</a> has great documentation of how the API works, including how to get transactions from a specific point in time. It's public, yet not documented anywhere on Venmo's website.</p>
+                <h2>Credits</h2>
+                <p>This is a project by <a href="https://22-8miles.com" target="_blank">Hang Do Thi Duc</a>, made in 2018 while a Media Fellow at the Mozilla Foundation, supported [in part] by a grant from the Open Society Foundations. Hang Do Thi Duc developed concept, performed data analysis, designed and and developed this media piece.</p>
+                <h4>Additional graphic design, data processing</h4>
+                <p>Huy Do Duc</p>
+                <h4>Consultancy for data analysis and design</h4>
+                <p>Amel Ghouila, Chris Hartgerink, Umi Syam</p>
+                <h4>Special thanks <img src="../media/img-apple-64/1f647-1f3fb-200d-2640-fe0f.png" class="emoji" data-codepoints="1f647-1f3fb-200d-2640-fe0f"  title="woman-bowing"/></h4>
+                <p>Brett Gaylor</p>
+                <br>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- settings steps pop up -->
+        <div id="venmo-settings" class="popup hidden" style="display: none">
+            <button id="venmo-settings-close" class="small low close">close</button>
+            <div class="container">
+                <h1>Change your settings in the Venmo app</h1>
+                <p>Click on the highlighted areas and your done in 20 seconds! <img src="../media/img-apple-64/1f596-1f3fd.png" class="emoji" data-codepoints="1f596-1f3fd" title="spock-hand" /></p>
+                <div class="ol">
+                    <p class="ol">1.</p>
+                    <p><img src="media/settings1.jpg" alt="step 1"></p>
+                    <p class="ol">2.</p>
+                    <p><img src="media/settings2.jpg" alt="step 2"></p>
+                    <p class="ol">3.</p>
+                    <p><img src="media/settings3.jpg" alt="step 3"></p>
+                    <p class="ol">4.</p>
+                    <p><img src="media/settings4.jpg" alt="step 4"></p>
+                    <p class="ol">5.</p>
+                    <p><img src="media/settings5.jpg" alt="step 5"></p>
+                    <p class="ol">6.</p>
+                    <p><img src="media/settings6.jpg" alt="step 6"></p>
+                </div>
+                <div class="clear"></div>
+            </div>
         </div>
         <!-- basics -->
-        <div id="god" style="display: none"><img src="media/god-cloud.png" alt="Venmo god"></div>
+        <div id="god" style="display: none">
+            <img src="media/god-cloud.png" alt="Venmo god">
+            <div class="god-link" style="display: none">
+                <h2>The Venmo God</h2>
+                <div class="line"></div>
+            </div>
+        </div>
         <div id="world" style="display: none">
-            <div id="small-stories">🌿🌽💞🥤🛍️</div>
+            <div id="small-stories"></div>
         </div>
         <!-- stories -->
         <div id="stories" style="display: none">
             <div id="story1" class="story-link-container right">
                 <div class="story-link">
-                    <h2>The Drug Dealer</h2>
+                    <h2>The Cannabis Retailer</h2>
                     <div class="line"></div>
                 </div>
-                <img class="story-link" src="media/dealer.png" alt="">
+                <div class="emoji story-link"></div>
             </div>
             <div id="story2" class="story-link-container left">
                 <div class="story-link">
-                    <h2>The Food Cart</h2>
+                    <h2>The Corn Dealer</h2>
                     <div class="line"></div>
                 </div>
-                <img class="story-link" src="media/elote.png" alt="">
+                <div class="emoji story-link"></div>
             </div>
             <div id="story3" class="story-link-container left">
                 <div class="story-link">
-                    <h2>Two Love Stories</h2>
+                    <h2>The Lovers</h2>
                     <div class="line"></div>
                 </div>
-                <img class="story-link" src="media/love.png" alt="">
+                <div class="emoji story-link"></div>
             </div>
             <div id="story4" class="story-link-container right">
                 <div class="story-link">
-                    <h2>YOLO</h2>
+                    <h2>The YOLOist</h2>
                     <div class="line"></div>
                 </div>
-                <img class="story-link" src="media/yolo.png" alt="">
+                <div class="emoji story-link"></div>
             </div>
             <div id="story5" class="story-link-container left">
                 <div class="story-link">
-                    <h2>All American</h2>
+                    <h2>The All Americans</h2>
                     <div class="line"></div>
                 </div>
-                <img class="story-link" src="media/american.png" alt="">
+                <div class="emoji story-link"></div>
             </div>
-            <div id="hello" class="container">
-                <p>Enter different <b><span class="story">stories</span></b> by clicking on them at the bottom.</p>
-                <p>See what one can learn about culture and human life by clicking on the <b><span class="god">Venmo god</span></b>.</p>
-                <p>There is that widespread notion of <b>"I have nothing to hide"</b>. Hopefully the stories and insights on this website help us ask ourselved more often <br><b>"Do I really need to share this?"</b></p>
+            <div id="hello" class="hello container">
+                <p>In the 200M+ transactions I discovered 5 personal ​<b><span class="story">stories</span></b>.</p>
+                <p>The story of the <b><span class="god">Venmo God</span></b> summarizes the superhuman insights gained from all public transactions.</p>
             </div>
         </div>
         <div id="story-content1" class="story-content container" style="display: none">
-            <h1>The Drug Dealer</h1>
-            <p>His first name is male, his last name is of <b>Spanish origin</b>. Some of the dealer's customers have profile picture url that point to their public Facebook profiles. From that information I place his home base to be in/near <b>Santa Barbara, CA</b>.</p>
-            <p class="sidenote">Note: All public transations include the URLs to each person's profile picure. Some URLs include the Facebook ID, so one can see their public information at facebook.com/FACEBOOKID.</p>
-            <div>
+            <h1>The Cannabis Retailer</h1>
+            <p>With access to the first name, I could infer that this person was male. I was also able to determine that he operates out of Santa Barbara, California. You might wonder how: some of his customers have a Facebook URL as their profile picture which includes their Facbeook ID and so it was easy for me to see where some of them, and therefore the protagonist of this story as well, live.</p>
+            <p>His very first transaction looks something like this:</p>
+            <div class="example">
+                <div>
+                    <span class="zigzag"></span>
+                    <br> "<span class="hl0">audience</span>": "public",
+                    <br> "<span class="hl0">actor</span>":
+                    <br> <span class="indent">"picture": "https://s3.amazonaws.com/venmo/no-image.gif",</span>
+                    <br> <span class="indent">"<span class="hl2">firstname</span>": "his first name",</span>
+                    <br> <span class="indent">"<span class="hl2">lastname</span>": "his last name",</span>
+                    <br> <span class="indent">"date_created": "2017-01-24T00:41:09",</span>
+                    <br> "<span class="hl0">target</span>":
+                    <br> <span class="indent">"<span class="hl2">picture</span>": "<span class="hl2">https://graph.fb.com/v2/[redacted FB ID]</span>",</span>
+                    <br> <span class="indent">"<span class="hl2">firstname</span>": "customer's first name",</span>
+                    <br> <span class="indent">"<span class="hl2">lastname</span>": "customer's last name",</span>
+                    <br> <span class="indent">"date_created": "2014-07-11T01:27:36",</span>
+                    <br> "created_time": "2017-01-25T06:03:04Z",
+                    <br> "<span class="hl1">message</span>": "for cbd",
+                    <br> "<span class="hl0">type</span>": "charge"
+                    <span class="zigzag"></span>
+                </div>
+            </div>
+            <p>He registered on January 24, 2017, a day before his first transaction, and had a total of ​943 transactions in 2017.</p>
+            <div class="smalldiv">
                 <svg class="smallsvg" viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet">
-                    <text y="80" dy="0.5em" style="text-anchor: end">
+                    <text y="100" dy="0.5em" style="text-anchor: end">
                         <tspan dx="0em" x="975.609756">920</tspan>
                         <tspan dx="-0.3em" x="975.609756" dy="1em">incoming</tspan>
                     </text>
@@ -182,34 +300,40 @@
                         <tspan dx="0.3em" x="1000">23</tspan>
                         <tspan dx="0em" x="1000" dy="1em">outgoing</tspan>
                     </text>
-                    <rect class="in" x="0" y="50" width="975.609756" height="15" />
-                    <rect class="out" x="975.609756" y="50" width="24.390244" height="15" />
+                    <rect class="in" x="0" y="65" width="975.609756" height="15" />
+                    <rect class="out" x="975.609756" y="65" width="24.390244" height="15" />
                 </svg>
             </div>
-            <p>He had a total of <b>943</b> transactions in 2017.</p>
-            <div class="point-down">👇</div>
-            <div class="filter">Filter: </div>
+            <div class="filter smalldiv">Filter: </div>
             <div id="drugs" class="timeline"></div>
-            <p>As you explored the filters, you probably noticed that <b>cbd/CBD</b> comes up a lot, 150 times to be exact. It's the abbreviation of "Cannabidiol [...] one of at least 113 cannabinoids identified in cannabis" (<a href="https://en.wikipedia.org/wiki/Cannabidiol" target="_blank">Wikipedia</a>). <b>delivery</b>, <b>order</b>, 💊 🌳, 🌲 <b>headband</b>, "an exotic strain of marijuana" (<a href="https://www.urbandictionary.com/define.php?term=Headband" target="_blank">Urban Dictionary</a>) <span class="cat0">incoming</span> </p>
-            <p>Even argue that <b>grocery</b> refers to weed or drugs considering the frequency of the message (36x) from 23 different people.</p>
-            <p>Seems like business is going well. He seems to have a helping hand who made 3 payments to the drug dealer:
-                <br>"Joey's sales"
-                <br>"3/22-3/23 sales"
-                <br>"CBD Joey's plus Ryan's sales"
-            </p>
-            <p>His friend [img] actually sent him 19 payments in total throughout the year - with a lot of references to Cannabis.</p>
-            <p>The public transactions of the Drug Dealer that I was able to capture were made private since. Good job! 👍 But that is exactly the dilemma, once your information is public it's pretty damn difficult to get it back!</p>
+            <p>You probably noticed that <b>​cbd/CBD</b>​ comes up a lot — 150 times to be exact. It's the abbreviation of "Cannabidiol [...] one of at least 113 cannabinoids identified in cannabis" (<a href="https://en.wikipedia.org/wiki/Cannabidiol" target="_blank">Wikipedia</a>). Other frequent messages include <b>delivery</b>, <b>order</b>, <img src="../media/img-apple-64/1f48a.png" class="emoji" data-codepoints="1f48a" title="pill" />, <img src="../media/img-apple-64/1f333.png" class="emoji" data-codepoints="1f333" title="deciduous_tree" />, <img src="../media/img-apple-64/1f332.png" class="emoji" data-codepoints="1f332" title="evergreen_tree" /> and <b>headband</b>, "an exotic strain of marijuana" (<a href="https://www.urbandictionary.com/define.php?term=Headband" target="_blank">Urban Dictionary</a>).</p>
+            <p>My hunch is that even the ​<b>"grocery"</b>​ transactions refer to drug deals — there are 36 <span class="cat0">incoming</span> transactions from 23 different people with this topic. No one I know buys groceries this way.</p>
+            <p>Seems like business is going well! He even has the cash to hire someone: Someone I’ve called Ronny made the following 19 payments to the drug dealer throughout the year with references to cannabis.</p>
+            <div class="dealer-business">
+                <div class="bg">
+                    <!-- 82/245 -->
+                    <p>This is Ronny <span><br>Registered <br>Sep 2014</span></p>
+                    <img src="media/weed.png" alt="Weed made of trees">
+                </div>
+                <div class="float"></div>
+                <p>Real names were replaced with fake ones.</p>
+            </div>
+            <p class="sidenote"><img src="../media/img-apple-64/2757.png" class="emoji" data-codepoints="2757" title="exclamation" />Warning<img src="../media/img-apple-64/2757.png" class="emoji" data-codepoints="2757" title="exclamation" /> If you don’t want Google to think you are interested in cannabis, you might want to log out of Google before or clean your cookies after you click on the links below.</p>
+            <p>I was able to learn a lot about weed examining these transactions. Terms like <a href="https://www.google.com/search?hl=en&q=gorilla+cookie" target="_blank">Gorilla Cookie</a>, <a href="https://www.google.com/search?hl=en&q=stacked+kush" target="_blank">Stacked Kush</a>, <a href="https://www.google.com/search?hl=en&q=gdp+cannabis" target="_blank">GDP</a> (abbreviation for Granddaddy Purple), and <a href="https://www.google.com/search?hl=en&q=gods%20gift" target="_blank">God's gift</a> seem to refer to different strains of cannabis.</p>
+            <p>I should note that his business is legal in the state of California. It seems, however, that eventually, our dealer felt like these transactions didn't need to be public on the internet — he has since changed his settings to make all of his transactions private (<a id="inline-venmo-settings-link" class="venmo-settings-link" href="">you should, too!</a>). Good job, dude! <img src="../media/img-apple-64/1f44d.png" class="emoji" data-codepoints="1f44d" title="+1" /></p>
+            <p>But this illustrates the problem — once your information is public, it's very difficult to get it back! That’s why you should <a id="inline-venmo-settings-link" class="venmo-settings-link" href="">change your Venmo privacy settings</a>.</p>
+            <div class="clear"></div>
             <div class="clear"></div>
             <button class="backstory small">
                 < all stories</button>
         </div>
         <div id="story-content2" class="story-content container" style="display: none">
-            <h1>The Food Cart</h1>
-            <p>No doubt this food cart is popular. Students from the University of California Santa Barbara get their fix of elotes, mangos, raspados, tostilocos, chicharrones etc here.</p>
-            <p>The cart vendor had a total of <b>8026</b> transactions in 2017.</p>
-            <div>
+            <h1>The Corn Dealer</h1>
+            <p>This Venmo human operates an incredibly successful food cart. Students from the University of California Santa Barbara get their fix of elotes, mangos, raspados, tostilocos, and chicharrones here.</p>
+            <p>The cart vendor had a total of <b>8026</b> transactions in 2017. He registered on February 23, 2016.</p>
+            <div class="smalldiv">
                 <svg class="smallsvg" viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet">
-                    <text y="80" dy="0.5em" style="text-anchor: end">
+                    <text y="100" dy="0.5em" style="text-anchor: end">
                         <tspan dx="0em" x="997.508099">8006</tspan>
                         <tspan dx="-0.3em" x="997.508099" dy="1em">incoming</tspan>
                     </text>
@@ -217,13 +341,48 @@
                         <tspan dx="0.3em" x="1000">20</tspan>
                         <tspan dx="0em" x="1000" dy="1em">outgoing</tspan>
                     </text>
-                    <rect class="in" x="0" y="50" width="997.508099" height="15" />
-                    <rect class="out" x="997.508099" y="50" width="2.491901" height="15" />
+                    <rect class="in" x="0" y="65" width="997.508099" height="15" />
+                    <rect class="out" x="997.508099" y="65" width="2.491901" height="15" />
                 </svg>
             </div>
-            <p>His most popular item is "elote". In case you don't know what that is:</p>
-            <div id="elote">
-                <div class="bgimg">🌽</div>
+            <p>The food cart's most frequent customer – let's just call her Cecile <span class="top1elote"></span> – came here 34 times in 2017, almost every week (except in the summer) and always around the same time.</p>
+            <p>Because Venmo data is often public, anybody can learn ​<b>when</b>​ you're craving <b>​what</b>​ food and <b>where</b> to find you. While Cecile's hunger being public knowledge may not seem a big deal to you, many people have reason to keep their whereabouts private. ​<a href="https://www.techsafety.org/privacymatters/" target="_blank">Victims of domestic abuse​</a>, for example. I had to wonder if these hungry students understood that they were broadcasting their location with every bite.</p>
+            <p>Let's see a timelapse of Cecile's 34 purchases!</p>
+            <div id="simulationstatus" class="smalldiv">
+                <div>
+                    <p class="header">2017</p>
+                    <p id="date" class="change">Jan 1</p>
+                    <p id="time" class="change"></p>
+                </div>
+                <div>
+                    <p class="header">Visits</p>
+                    <p id="count" class="change">0</p>
+                </div>
+                <div class="tally">
+                    <p><span id="elote">0</span> <span class="xyo">x</span> Elote</p>
+                    <p><span id="raspado">0</span> <span class="xyo">x</span> Raspado</p>
+                    <p><span id="gracias">0</span> <span class="xyo">x</span> Gracias</p>
+                    <p><span id="mango">0</span> <span class="xyo">x</span> Mango</p>
+                    <p><span id="tostilocos">0</span> <span class="xyo">x</span> Tostilocos</p>
+                </div>
+                <div class="tally">
+                    <p><span id="takilocos">0</span> <span class="xyo">x</span> Takilocos</p>
+                    <p><span id="papas">0</span> <span class="xyo">x</span> Papas</p>
+                    <p><span id="chicharron">0</span> <span class="xyo">x</span> Chicharrón</p>
+                    <p><span id="diablito">0</span> <span class="xyo">x</span> Diablito</p>
+                    <p><span id="esquite">0</span> <span class="xyo">x</span> Esquite</p>
+                </div>
+            </div>
+            <div class="simulation food smalldiv"></div>
+            <p>
+                <button id="playfood" class="medium play high">Play</button>
+                <button id="speed2" class="small speed">5x</button>
+                <button id="speed1" class="small speed">3x</button>
+                <button id="speed0" class="small speed active">1x</button>
+            </p>
+            <p>As you can see here, elote is this young woman's favorite. It's also the overall most popular item with ​<b>30%</b>​ (or 2509) of all transactions including the word "elote", "corn," or the corn emoji. In case you don't know what it is:</p>
+            <div id="elotedef">
+                <div class="bgimg"></div>
                 <blockquote>
                     "<b>Elote</b> (Nahuatl: ēlōtl [ˈeːloːt͡ɬ]),
                     <br>or corn on the cob is a popular street food in Mexico, although it is frequently served at home prepared in the same way (boiled or grilled in husk).[1] It is customarily consumed on a stick, or by grasping the husk of the cob that has been pulled down to form a handle". Condiments such as salt, chili powder, butter, cheese, lemon juice or lime juice, mayonnaise, and sour cream (or crema) are usually added to the elote.
@@ -233,100 +392,397 @@
                     <br>In the southern and central urban zones of Mexico, ready-to-eat boiled elotes are usually sold by street vendors or in stands, but in the rest of Mexico elotes are more frequently sold in stores or restaurants. The elotes are boiled in water or grilled over coals and condiments of the customer's choosing are added when sold."
                     <br>
                     <br>
-                    <center>Quote from a transaction from April 13, 2017 3:27pm
-                        <br><br>🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽🌽</center>
+                    <center>Quote from a transaction message – April 13, 2017 3:27pm</center>
+                    <p class="ornament"></p>
                 </blockquote>
             </div>
-            <p>The food cart's most frequent customer, came here 34 times in 2017, almost every week except in the summer (July - September) and always around the same time. How convenient is it that you can pay for your delicious snacks via Venmo, especialy when it gets crowded. In this case everybody can learn when you're craving what food and where to find you.</p>
-            <div class="simulation food"></div>
-            <p>
-                <button id="playfood" class="small play">Play</button>
-            </p>
+            <p><b>1861</b> x Mango, <b>719</b> x Raspado/Shaved Ice <img src="../media/img-apple-64/1f367.png" class="emoji" data-codepoints="1f367" title="shaved_ice" />, <b>299</b> x Tostilocos, <b>223</b> x Chicharrones and <b>696</b> x Various Orders (e.g. "esquite", "chips", "churros", "papas", "doritos", "taki", "<img src="../media/img-apple-64/1f32e.png" class="emoji" data-codepoints="1f32e" title="taco" />", "diablito", "tostitos").</p>
+            <p>If you don’t like the idea of anyone being able to place your location from your financial transactions, you should <a id="inline-venmo-settings-link" class="venmo-settings-link" href="">change your Venmo privacy settings</a>.</p>
+            <div class="clear"></div>
             <div class="clear"></div>
             <button class="backstory small">
                 < all stories</button>
         </div>
         <div id="story-content3" class="story-content container" style="display: none">
-            <h1>Two Love Stories</h1>
-            <p>Life writes the best stories, and there are sad and there are happy ones. I discovered these two pairs while looking for the transactions with the most comments. One can find whole conversations in the comments, almost like a chat!</p>
-            <p>Interestingly, all four of them and in fact most people who comment a lot have very few transactions in the whole year of 2017 which makes me wonder if they are familiar with the platform enough to know that everything is public by default.</p>
+            <h1>The Lovers</h1>
+            <p>Forget soap operas and romantic novels — Venmo is the best place to find drama. I discovered these two couples’ stories while looking for transactions with the most comments. You can find whole conversations in Venmo comments, almost like a chat!</p>
+            <p>Here’s what it looks like in the data:</p>
+            <div class="example">
+                <div>
+                    <span class="zigzag"></span>
+                    <br> "<span class="hl0">audience</span>": "public",
+                    <br> "<span class="hl0">actor</span>":
+                    <br> <span class="indent">"picture": "https://venmopics.appspot.com/[redacted]",</span>
+                    <br> <span class="indent">"<span class="hl2">firstname</span>": "[Gonzalo's redacted name]",</span>
+                    <br> <span class="indent">"<span class="hl2">lastname</span>": "[Gonzalo's redacted name]",</span>
+                    <br> <span class="indent">"date_created": "2017-01-14T23:21:26",</span>
+                    <br> "<span class="hl0">target</span>":
+                    <br> <span class="indent">"picture": "https://venmopics.appspot.com/[redacted]",</span>
+                    <br> <span class="indent">"<span class="hl2">firstname</span>": "[Susana's redacted name]",</span>
+                    <br> <span class="indent">"<span class="hl2">lastname</span>": "[Susana's redacted name]",</span>
+                    <br> <span class="indent">"date_created": "2017-01-20T23:30:24",</span>
+                    <br> "<span class="hl1">created_time</span>": "2017-02-14T02:35:18Z",
+                    <br> "<span class="hl1">message</span>": "Food",
+                    <br> "<span class="hl0">type</span>": "payment"
+                    <br> "<span class="hl0">comments</span>":
+                    <br> <span class="indent">"actor": "Gonzalo",</span>
+                    <br> <span class="indent">"created_time": "2017-02-14T03:04:11Z",</span>
+                    <br> <span class="indent">"<span class="hl2">message</span>": "Lmk if you got it",</span>
+                    <br>
+                    <br> <span class="indent">"actor": "Susana",</span>
+                    <br> <span class="indent">"created_time": "2017-02-14T03:07:40Z",</span>
+                    <br> <span class="indent">"<span class="hl2">message</span>": "I returned it back to you",</span>
+                    <br>
+                    <br> <span class="indent">"actor": "Susana",</span>
+                    <br> <span class="indent">"created_time": "2017-02-14T03:07:45Z",</span>
+                    <br> <span class="indent">"<span class="hl2">message</span>": "Yo leave me alone",</span>
+                    <br>
+                    <span class="zigzag"></span>
+                </div>
+            </div>
+            <p>Interestingly, all four of these lovers (and in fact most people who comment frequently) have very few transactions in the whole year of 2017. This makes me wonder: are they familiar enough with the platform to know that everything is public by default? While Venmo’s interface encourages this type of social conversation, do users fully understand that anyone can view their chats?</p>
             <h2>A sad story</h2>
-            <p style="font-size: 2em">💔</p>
-            <p>To protect their privacy I am going to call the protaginists of the first story Susana and Gonzalo. They decided to discuss their relationship matters in public. Or was that really a conscious choice?</p>
-            <p>The two of them are also quite new to the at the time this happened, they registered on Venmo on January 14 and January 20.</p>
-            <div id="sad-love"></div>
+            <p style="font-size: 2em"><img src="../media/img-apple-64/1f494.png" class="emoji" data-codepoints="1f494" title="broken_heart" /></p>
+            <p>To protect their privacy, I am going to call the protagonists of the first story Susana and Gonzalo. They decided to discuss their relationship matters in public. Or was that really a conscious choice?</p>
+            <p>The two of them were also quite new to the app at the time this happened — they registered for Venmo on January 14 and January 20.</p>
+            <div id="sad-love" class="smalldiv"></div>
             <div class="clear"></div>
             <h2>A happy story</h2>
-            <p style="font-size: 2em">💖</p>
-            <p>In this story you can witness how Breezy and Pedro – two placeholder names – start to get to know each other in public. They discuss specific transaction amounts and their living situation in Clute, TX and Houston, TX. After exchanging messages every day, sometimes in real time, for about a week (October 20-28), they decided to move on from Venmo. I hope it had a happy ending!</p>
-            <p>Pedro and Breezy are also fairly fresh users, having registered on September 6 and October 8 respectively.</p>
-            <div id="happy-love"></div>
+            <p style="font-size: 2em"><img src="../media/img-apple-64/1f496.png" class="emoji" data-codepoints="1f496" title="sparkling_heart" /></p>
+            <p>In this story you can witness how Breezy and Pedro — two aliases — start to get to know each other in public. They discuss specific transaction amounts and their living situation in Clute, TX and Houston, TX. After exchanging messages every day (sometimes in real time) for about a week (October 20-28), they decided to move on from Venmo. I hope it had a happy ending!</p>
+            <p>Pedro and Breezy are also fairly new users, having registered on September 6 and October 8, respectively.</p>
+            <div id="happy-love" class="smalldiv"></div>
+            <div class="clear"></div>
+            <p>Do you also have extensive conversations in the comment sections of Venmo transactions? These are public by default, too! Go into your <a id="inline-venmo-settings-link" class="venmo-settings-link" href="">Venmo privacy settings</a> to change that.</p>
+            <div class="clear"></div>
             <div class="clear"></div>
             <button class="backstory small">
                 < all stories</button>
         </div>
         <div id="story-content4" class="story-content container" style="display: none">
-            <h1>YOLO</h1>
+            <h1>The YOLOist</h1>
             <p>You only live once, right?</p>
-            <p>This young female with a name of <b>Greek origin</b> (the follower of a Greek Goddess) certainly enjoys life to the fullest. In 2017, she had <b>2033</b> transactions on Venmo.</p>
-            <div>
-                <svg class="smallsvg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
-                    <image xlink:href="media/calista.png" width="100" y="0" x="204.303984" />
-                    <text y="140" dy="0.5em" style="text-anchor: end">
+            <p>This young female with a name of ​<b>Greek origin</b>​ certainly enjoys life to the fullest. Let's just call her Calista. Calista has been using Venmo since March 24, 2017 and accumulated ​<b>2033</b>​ transactions in the following 8 months.</p>
+            <div class="smalldiv">
+                <svg class="smallsvg" viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet">
+                    <text y="100" dy="0.5em" style="text-anchor: end">
                         <tspan dx="0em" x="254.303984">521</tspan>
                         <tspan dx="-0.3em" x="254.303984" dy="25">incoming</tspan>
                     </text>
-                    <text y="140" dy="0.5em" dx="0.5em" style="text-anchor: start">
+                    <text y="100" dy="0.5em" dx="0.5em" style="text-anchor: start">
                         <tspan dx="0.3em" x="254.303984">1512</tspan>
                         <tspan dx="0.3em" x="254.303984" dy="25">outgoing</tspan>
                     </text>
-                    <rect class="in" x="0" y="110" width="254.303984" height="15" />
-                    <rect class="out" x="254.303984" y="110" width="745.696016" height="15" />
+                    <rect class="in" x="0" y="70" width="254.303984" height="15" />
+                    <rect class="out" x="254.303984" y="70" width="745.696016" height="15" />
                 </svg>
             </div>
-            <p>It's not clear where she lives but some of the people in her network live in Texas and Mexico City.</p>
-            <p class="sidenote">Note: All public transations include the URLs to each person's profile picure. Some URLs include the Facebook ID, so one can see their public information at facebook.com/FACEBOOKID.</p>
-            <p>Our YOLO girl just looooves <b>Coke</b> (280x), 🍹 (248x) and 🍕 (209x). She shared her 280 Cokes with 37 people last year.</p>
-            <svg class="packed4"></svg>
+            <p>Here's how one of her many transactions looks like.</p>
+            <div class="example">
+                <div>
+                    <span class="zigzag"></span>
+                    <br> "<span class="hl0">audience</span>": "public",
+                    <br> "<span class="hl0">actor</span>":
+                    <br> <span class="indent">"picture": "https://venmopics.appspot.com/[redacted]",</span>
+                    <br> <span class="indent">"<span class="hl2">firstname</span>": "[Calista's redacted name]",</span>
+                    <br> <span class="indent">"<span class="hl2">lastname</span>": "[Calista's redacted name]",</span>
+                    <br> <span class="indent">"date_created": "2017-03-24T17:39:30",</span>
+                    <br> "<span class="hl0">target</span>":
+                    <br> <span class="indent">"<span class="hl2">picture</span>": "<span class="hl2">https://graph.fb.com/v2/[redacted FB ID]</span>",</span>
+                    <br> <span class="indent">"<span class="hl2">firstname</span>": "[friend's redacted name]",</span>
+                    <br> <span class="indent">"<span class="hl2">lastname</span>": "[friend's redacted name]",</span>
+                    <br> <span class="indent">"date_created": "2016-12-10T13:06:10",</span>
+                    <br> "<span class="hl1">created_time</span>": "2017-04-13T19:10:29Z",
+                    <br> "<span class="hl1">message</span>": "Coke",
+                    <br> "<span class="hl0">type</span>": "payment"
+                    <span class="zigzag"></span>
+                </div>
+            </div>
+            <p>It's not clear where she lives, but some of the people in her network live in Texas and Mexico City.</p>
+            <p class="sidenote">Note: All public transactions include the URLs to each person's profile picture. Some URLs include the Facebook ID, so one can see their public information at facebook.com/FACEBOOKID.</p>
+            <p>Venmo users are encouraged to submit captions to describe transactions. Our hedonistic friend described her consumption habits with words and emojis, and the emerging portrait is not a healthy one. She might want to consider that it has become​ <a href="https://www.huffingtonpost.com/nextadvisorcom/do-insurance-companies-lo_b_7844070.html" target="_blank">common for insurance companies to monitor social media​</a> to verify health claims.</p>
+            <p>965 transactions for sodas, alcoholic drinks, fast food and sweets in 8 months really don't seem very healthy to me.</p>
+            <div class="unhealthy">
+                <div class="person">
+                    <p class="namebar">Calista</p>
+                    <p class="profilepic"></p>
+                    <p class="label">My Consumption 2017</p>
+                </div>
+                <div class="toptongue"></div>
+                <div class="stream"></div>
+            </div>
+            <p class="sidenote">Some messages above have been modified for better readibility. "Coke" and "Soda" were replaced with "🥤", and the following messages were replaced with the closest matching emoji: ":festival_beer:", ":rocket_popsicle:", ":america_cake:", ":candy_cane:", "drinkk", "drink", ":candy_corn:", "candy", ":festival_grilled_cheese:", "cokkies", "chesse", "pizzas". Furthermore, numbers and words like e.g. "para ti" and "for" were removed as they do not change the meaning of the message.</p>
+            <p>Our YOLO girl just looooves <b>Coke</b> (280x), <img src="../media/img-apple-64/1f379.png" class="emoji" data-codepoints="1f379" title="tropical_drink" /> (248x) and <img src="../media/img-apple-64/1f355.png" class="emoji" data-codepoints="1f355" title="pizza" /> (209x). She shared her 280 Cokes with 37 people last year. The majority of her transaction messages are also very short – often just 1-2 emojis or words – and don't vary a lot, which shows a certain routine.</p>
+            <p>What does she do and share with her 3 <b>besties?</b> Here are each of their 5 most used messages.</p>
+            <ul>
+                <li>
+                    <div class="pic"></div>
+                    <p><b>200</b>
+                        <br><span>transactions</span></p>
+                    <div>
+                        <ul>
+                            <li><span>51 x</span> <span style="font-size: 0.8em">Coke</span></li>
+                            <li><span>27 x</span> <img src="../media/img-apple-64/2615.png" class="emoji" data-codepoints="2615" title="coffee" /></li>
+                            <li><span>17 x</span> <img src="../media/img-apple-64/1f369.png" class="emoji" data-codepoints="1f369" title="doughnut" /></li>
+                            <li><span>17 x</span> <img src="../media/img-apple-64/1f379.png" class="emoji" data-codepoints="1f379" title="tropical_drink" /></li>
+                            <li><span>16 x</span> <img src="../media/img-apple-64/1f1ec-1f1f7.png" class="emoji" data-codepoints="1f1ec-1f1f7" title="flag-gr" /><img src="../media/img-apple-64/1f343.png" class="emoji" data-codepoints="1f343" title="leaves" /></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="pic"></div>
+                    <p><b>159</b>
+                        <br><span>transactions</span></p>
+                    <div>
+                        <ul>
+                            <li><span>29 x</span> <img src="../media/img-apple-64/2615.png" class="emoji" data-codepoints="2615" title="coffee" /> </li>
+                            <li><span>25 x</span> <span style="font-size: 0.8em">Coke</span></li>
+                            <li><span>20 x</span> <img src="../media/img-apple-64/1f355.png" class="emoji" data-codepoints="1f355" title="pizza" /> </li>
+                            <li><span>14 x</span> <img src="../media/img-apple-64/1f379.png" class="emoji" data-codepoints="1f379" title="tropical_drink" /> </li>
+                            <li><span>12 x</span> <img src="../media/img-apple-64/1f374.png" class="emoji" data-codepoints="1f374" title="fork_and_knife" /> </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="pic"></div>
+                    <p><b>148</b>
+                        <br><span>transactions</span></p>
+                    <div>
+                        <ul>
+                            <li><span>31 x</span> <img src="../media/img-apple-64/1f379.png" class="emoji" data-codepoints="1f379" title="tropical_drink" /> </li>
+                            <li><span>25 x</span> <img src="../media/img-apple-64/1f1ec-1f1f7.png" class="emoji" data-codepoints="1f1ec-1f1f7" title="flag-gr" /><img src="../media/img-apple-64/1f343.png" class="emoji" data-codepoints="1f343" title="leaves" /> </li>
+                            <li><span>22 x</span> <img src="../media/img-apple-64/1f369.png" class="emoji" data-codepoints="1f369" title="doughnut" /> </li>
+                            <li><span>20 x</span> <img src="../media/img-apple-64/2615.png" class="emoji" data-codepoints="2615" title="coffee" /> </li>
+                            <li><span>18 x</span> <img src="../media/img-apple-64/1f355.png" class="emoji" data-codepoints="1f355" title="pizza" /> </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <p>Do you want an artist (or anybody really) to be able to judge your diet from data they’re able to freely download from the Internet? If not, <a id="inline-venmo-settings-link" class="venmo-settings-link" href="">change your Venmo privacy settings</a>.</p>
+            <div class="clear"></div>
             <div class="clear"></div>
             <button class="backstory small">
                 < all stories</button>
         </div>
         <div id="story-content5" class="story-content container" style="display: none">
-            <h1>All American</h1>
-            <p>This married couple – they share the last name – had <b>503</b> transactions between each other.</p>
-            <p>They own a <b>dog</b> and a <b>car</b> which they prefer to fuel at Chevron almost every two weeks. They really like <b>pizza</b>, their favorite is at Shakey's, occasionally they also eat Asian and German food.</p>
-            <p>And they are paying a <b>loan</b> - 20 transactions last year to be exact, usually paid Thursday, Friday or Saturday. It's always the same person making <span class="cat1">payments</span> to the other, not always in full and also <b>not constistently</b> at the beginning or the end of the month. 3 transactions are <span class="cat2">charges</span>, meaning the person who pays the loan requests money - loan refund.</p>
+            <h1>The All Americans</h1>
+            <p>This married couple (they share a last name) owns a ​<b>dog​</b> and a ​<b>car​</b> which they prefer to fuel at Chevron about every two weeks. They really like ​<b>pizza</b>​ (their favorite is from Shakey's), but they occasionally also eat Asian and German food. And they buy a lot of ​<b>groceries</b>​.</p>
+            <div class="example">
+                <div>
+                    <span class="zigzag"></span>
+                    <br> "<span class="hl0">audience</span>": "public",
+                    <br> "<span class="hl0">actor</span>":
+                    <br> <span class="indent">"picture": "https://s3.amazonaws.com/venmo/no-image.gif",</span>
+                    <br> <span class="indent">"<span class="hl2">firstname</span>": "[wife's redacted name]",</span>
+                    <br> <span class="indent">"<span class="hl2">lastname</span>": "[couple's redacted last name]",</span>
+                    <br> <span class="indent">"date_created": "2015-08-14T00:55:16",</span>
+                    <br> "<span class="hl0">target</span>":
+                    <br> <span class="indent">"picture": "https://s3.amazonaws.com/venmo/no-image.gif",</span>
+                    <br> <span class="indent">"<span class="hl2">firstname</span>": "[husband's redacted name]",</span>
+                    <br> <span class="indent">"<span class="hl2">lastname</span>": "[couple's redacted last name]",</span>
+                    <br> <span class="indent">"date_created": "2017-01-07T21:04:05Z",</span>
+                    <br> "created_time": "2017-01-25T06:03:04Z",
+                    <br> "<span class="hl1">message</span>": "<img src="../media/img-apple-64/1f354.png" class="emoji" data-codepoints="1f354" title="hamburger" /><img src="../media/img-apple-64/1f355.png" class="emoji" data-codepoints="1f355" title="pizza" /><img src="../media/img-apple-64/1f357.png" class="emoji" data-codepoints="1f357" title="poultry_leg" /><img src="../media/img-apple-64/1f35c.png" class="emoji" data-codepoints="1f35c" title="ramen" /><img src="../media/img-apple-64/1f364.png" class="emoji" data-codepoints="1f364" title="fried_shrimp" /><img src="../media/img-apple-64/1f35f.png" class="emoji" data-codepoints="1f35f" title="fries" /><img src="../media/img-apple-64/1f35b.png" class="emoji" data-codepoints="1f35b" title="curry" /><img src="../media/img-apple-64/1f356.png" class="emoji" data-codepoints="1f356" title="meat_on_bone" /><img src="../media/img-apple-64/1f35a.png" class="emoji" data-codepoints="1f35a" title="rice" /><img src="../media/img-apple-64/1f43d.png" class="emoji" data-codepoints="1f43d" title="pig_nose" /><img src="../media/img-apple-64/1f43d.png" class="emoji" data-codepoints="1f43d" title="pig_nose" /><img src="../media/img-apple-64/1f43d.png" class="emoji" data-codepoints="1f43d" title="pig_nose" /><img src="../media/img-apple-64/1f437.png" class="emoji" data-codepoints="1f437" title="pig" /><img src="../media/img-apple-64/1f437.png" class="emoji" data-codepoints="1f437" title="pig" /><img src="../media/img-apple-64/1f437.png" class="emoji" data-codepoints="1f437" title="pig" />",
+                    <br> "<span class="hl0">type</span>": "payment"
+                    <span class="zigzag"></span>
+                </div>
+            </div>
+            <p>Most of the time money is flowing from the wife to the husband, however <b>insurance</b>, <b>rent</b> and <b>loan</b> is paid by the husband to the wife. They had <b>503</b> transactions between each other.</p>
+            <div class="smalldiv">
+                <svg class="smallsvg" viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet">
+                    <text y="100" dy="0.5em" style="text-anchor: end">
+                        <tspan dx="0em" x="908.548708">457</tspan>
+                        <tspan dx="-0.3em" x="908.548708" dy="1em">woman paid</tspan>
+                    </text>
+                    <text y="0" dy="1em" dx="0.5em" style="text-anchor: end">
+                        <tspan dx="0.3em" x="1000">46</tspan>
+                        <tspan dx="0em" x="1000" dy="1em">man paid</tspan>
+                    </text>
+                    <rect class="in" x="0" y="65" width="908.548708" height="15" />
+                    <rect class="out" x="908.548708" y="65" width="91.451292" height="15" />
+                </svg>
+            </div>
+            <p>20 transactions last year were about <b>loan</b>, usually paid Thursday, Friday or Saturday. It's always the same person making <span class="cat1">payments</span> to the other, though not always in full ​<b>not consistently</b>​ at the beginning or end of the month. 3 transactions are <span class="cat2">charges</span>, meaning the person who pays the loan requests money.</p>
+            <div class="point-down"><img src="../media/img-apple-64/1f447.png" class="emoji" data-codepoints="1f447" title="point_down" /></div>
             <div id="loan" class="timeline"></div>
             <div class="clear"></div>
-            <p>Our married couple is a great example to show how your transactions can reveal a lot of things about you, including some life patterns. By far the most transactions are for grocery stores – 25 x <span class="walmart">Walmart</span>, 19 x <span class="albertsons">Albertsons</span> and 15 x <span class="costco">CostCo</span>. They went to <span>Aldi</span> and <span>Walgreens</span> a few times. They go shopping more than once a week, almost never on Wednesday or Sunday.</p>
+            <p>Our married couple is a great example of how your transactions can reveal a lot about you, including habits and routines. By far the most transactions are for grocery stores – 25 x <span class="walmart">Walmart</span>, 19 x <span class="albertsons">Albertsons</span> and 15 x <span class="costco">CostCo</span>. They went to <span>Aldi</span> and <span>Walgreens</span> a few times. They go shopping more than once a week, but almost never on Wednesday or Sunday.</p>
             <div id="groceries" class="timeline"></div>
             <div class="clear"></div>
-            <p>Looking at all transactions, I believe that the both of them live in <b>Orange County</b>.</p>
-            <p>There are 8 transactions including the term <a href="https://www.google.com/search?q=sdg%26e&oq=SDG%26E" target="_blank">SDG&E</a>. San Diego Gas & Electric (SDG&E) "provides natural gas and electricity to San Diego County and southern Orange County in southwestern California". They visited a theater in the region (<a href="https://www.google.com/search?q=regal+eastvale" target="_blank">Regal Eastvale</a>), "Chicago Ribs" appears 5 times (could be a reference to "Chicago for Ribs" restaurant that has <a href="http://www.chicagoforribs.com/locations.html" target="_blank">3 locations</a> (Los Angeles, San Pedro and Redondo Beach), <a href="https://www.google.com/maps/?q=lax" target="_blank">LAX</a>, the airport in Los Angeles, is mentioned twice about one month apart. Other transactions that support this assumption include the <a href="http://www.in-n-out.com/docs/default-source/downloads/Locations_Printable.pdf">In n out</a>, <a href="https://aldi.us/stores/" target="_blank">Aldi</a> (within California only in the south), and "Banfield Pet Hospital".</p>
+            <p>Looking at all transactions, I believe that the both of them live in <b>Orange County, CA​.</b>.</p>
+            <p>There are 8 transactions including the term <a href="https://www.google.com/search?hl=en&q=sdg%26e&oq=SDG%26E" target="_blank">SDG&E</a>. San Diego Gas & Electric (SDG&E) "provides natural gas and electricity to San Diego County and southern Orange County in southwestern California". They visited a theater in the region (<a href="https://www.google.com/search?hl=en&q=regal+eastvale" target="_blank">Regal Eastvale</a>), "Chicago Ribs" appears 5 times (could be a reference to the "Chicago for Ribs" restaurant that has <a href="http://www.chicagoforribs.com/locations.html" target="_blank">3 locations</a> (Los Angeles, San Pedro and Redondo Beach), and <a href="https://www.google.com/maps/?q=lax" target="_blank">LAX</a>, the airport in Los Angeles, is mentioned twice about one month apart. Other transactions that support this assumption include the <a href="http://www.in-n-out.com/docs/default-source/downloads/Locations_Printable.pdf" target="_blank">In n out</a>, <a href="https://aldi.us/stores/" target="_blank">Aldi</a> (within California only in the south), and "Banfield Pet Hospital".</p>
+            <p>The two of them are real brand name shoppers — including the ones mentioned above there are 31 in total:</p>
+            <ul>
+                <li class="less">Albertsons</li>
+                <li class="less">Aldi</li>
+                <li>AMC</li>
+                <li>99 cent store</li>
+                <li>Barnes Noble</li>
+                <li>Bath and Body Works</li>
+                <li>Bed Bath and Beyond</li>
+                <li class="less">Chevron</li>
+                <li>Cold Stone</li>
+                <li class="less">CostCo</li>
+                <li>CVS</li>
+                <li>DD discount</li>
+                <li>Denny's</li>
+                <li>Dollar Tree</li>
+                <li>Dominos</li>
+                <li>Home Depot</li>
+                <li>IHop</li>
+                <li>Ikea</li>
+                <li class="less">In n out</li>
+                <li>Jack in the Box</li>
+                <li>KFC</li>
+                <li>Kmart</li>
+                <li>McDonalds</li>
+                <li>Panda Express</li>
+                <li class="less">Regal</li>
+                <li>Staples</li>
+                <li>Shell</li>
+                <li>Target</li>
+                <li>Ulta</li>
+                <li class="less">Walgreens</li>
+                <li class="less">Walmart</li>
+            </ul>
+            <p>Social networks already serve ads to us based on what we like and watch. Why give up even more information about yourself publicly? Change those <a id="inline-venmo-settings-link" class="venmo-settings-link" href="">Venmo privacy settings</a>.</p>
+            <div class="clear"></div>
             <div class="clear"></div>
             <button class="backstory small">
                 < all stories</button>
         </div>
         <!-- insights -->
         <div id="insights" style="display: none">
-            <div id="insights-container">
+            <div class="insights-content">
+                <!--  -->
                 <h2>The Humans of Venmo</h2>
-                <p>General characteristics</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam architecto fugiat quae officiis nulla, exercitationem quis natus facilis quo eius culpa nemo et consequuntur, earum sequi iusto, fuga similique? Cupiditate!</p>
+                <p>The following insights are based on the 207,984,218 public Venmo transaction from 2017.</p>
+                <p class="bigno">
+                    <span class="number">18,429,464</span>
+                    <span class="caption">humans who share their transactions publicly</span>
                 </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur suscipit saepe obcaecati tenetur magni totam repellat amet. Ad voluptates modi laudantium, illo accusantium, ipsum enim sapiente iure minus minima sint!</p>
-                <h2>The Human Behavior</h2>
-                <p>Payment messages</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam architecto fugiat quae officiis nulla, exercitationem quis natus facilis quo eius culpa nemo et consequuntur, earum sequi iusto, fuga similique? Cupiditate!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur suscipit saepe obcaecati tenetur magni totam repellat amet. Ad voluptates modi laudantium, illo accusantium, ipsum enim sapiente iure minus minima sint!</p>
-                <h2>The Busiest Day</h2>
-                <p>December 2, 2017</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam architecto fugiat quae officiis nulla, exercitationem quis natus facilis quo eius culpa nemo et consequuntur, earum sequi iusto, fuga similique? Cupiditate!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur suscipit saepe obcaecati tenetur magni totam repellat amet. Ad voluptates modi laudantium, illo accusantium, ipsum enim sapiente iure minus minima sint!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam architecto fugiat quae officiis nulla, exercitationem quis natus facilis quo eius culpa nemo et consequuntur, earum sequi iusto, fuga similique? Cupiditate!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur suscipit saepe obcaecati tenetur magni totam repellat amet. Ad voluptates modi laudantium, illo accusantium, ipsum enim sapiente iure minus minima sint!</p>
-                <!-- <p><a href="http://blog.venmo.com/2016/7/14/venmo-unveils-most-emoji-loving-cities-in-celebration-of-worldemojiday">they know more</a></p> -->
+                <p class="bigno">
+                    <span class="number">1,731,783</span>
+                    <span class="caption">Facebook IDs</span>
+                </p>
+                <p class="bigno">
+                    <span class="number">1,189,210</span>
+                    <span class="caption">unique last names</span>
+                </p>
+                <p>Here are the 50 most frequent last names among the people who have public transactions. Some names can easily reveal the <b>ethnicity</b> and even, in some cases, the country of origin. For example "Nguyen", ranked 8th, is a very typical Vietnamese name.</p>
+                <div id="lastnames">
+                    <svg></svg>
+                </div>
+                <div class="clear"></div>
+                <p>Almost 8 million users who are sharing their transactions publicly registered in 2017. Venmo is growing rapidly. Still, most public transactions came from users who signed up in previous years.</p>
+                <div id="registered">
+                    <p>
+                        <div class="user-box">
+                            <p class="user user1" style="transform-origin: left top"></p>
+                        </div> = 80K users <span style="display: inline-block; width: 20px;"></span>
+                        <div class="money-box">
+                            <p class="money" style="transform-origin: left top"></p>
+                        </div> = 700K payments</p>
+                </div>
+                <div class="clear"></div>
+                <p>You might wonder when are those humans the most active?</p>
+                <p class="sidenote">Note: For each transaction there is a timestamp of when it was made. This time is the Greenwich Mean Time (GMT). Usually, the east coast of the US is 4 hours and the west coast is 7 hours behind GMT. As the real Venmo company, they probably know exactly what the local time of each transaction is because of the user's IP address.
+                    <br>
+                    <br>So <b>12am GMT</b> is <b>5pm in San Francisco</b> and <b>8pm in New York</b>.</p>
+                <p>Average number of transactions per hour in Pacific Time / Eastern Time</p>
+                <div id="activity">
+                    <svg></svg>
+                </div>
+                <div class="clear"></div>
+                <!--  -->
+                <h2>Human Behavior</h2>
+                <p class="bigno">
+                    <span class="number">207,984,218</span>
+                    <span class="caption">public Venmo transactions</span>
+                </p>
+                <p class="bigno">
+                    <span class="number">2,979,619</span>
+                    <span class="caption">public transactions involving "<img src="../media/img-apple-64/1f355.png" class="emoji" data-codepoints="1f355"  title="pizza"/>" or "Pizza"</span>
+                </p>
+                <p>Here is the breakdown per month.</p>
+                <div id="pizza">
+                    <svg></svg>
+                </div>
+                <p>"<img src="../media/img-apple-64/1f355.png" class="emoji" data-codepoints="1f355" title="pizza" />" is the most used "word" on (public) Venmo. There were 1,887,366 transactions that just had this one emoji as the caption.</p>
+                <p>Another very popular use case for Venmo is paying rent! Everyone can see who you live with.</p>
+                <p class="bigno">
+                    <span class="number">3,020,484</span>
+                    <span class="caption">public transactions involving "<img src="../media/img-apple-64/1f3e0.png" class="emoji" data-codepoints="1f3e0"  title="house"/><img src="../media/img-apple-64/1f4b8.png" class="emoji" data-codepoints="1f4b8"  title="money_with_wings"/>" or "Rent"</span>
+                </p>
+                <div id="rent">
+                    <svg></svg>
+                </div>
+                <div class="clear"></div>
+                <h3>People are going places...</h3>
+                <p>Here are the most popular destinations associated with messages people pay each other for <b>Airbnb</b> accommodations.</p>
+                <ul id="airbnb"></ul>
+                <p>They also like to share rides when going out and about. They take traditional taxi rides, but messages that mention "<img src="../media/img-apple-64/1f696.png" class="emoji" data-codepoints="1f696" title="oncoming_taxi" />", "<img src="../media/img-apple-64/1f695.png" class="emoji" data-codepoints="1f695" title="taxi" />", "taxi" or "cab" are by far not as frequent as <b>Uber</b> transactions. <b>Lyft</b> can't quite compete, either. </p>
+                <p><span class="legend-car"></span> = 100,000 transactions.</p>
+                <!-- UBER 2623997 LYFT 435265 TAXI 966327 -->
+                <div id="rides">
+                    <p>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="uber"></span>
+                        <span class="taxi"></span>
+                        <span class="taxi"></span>
+                        <span class="taxi"></span>
+                        <span class="taxi"></span>
+                        <span class="taxi"></span>
+                        <span class="taxi"></span>
+                        <span class="taxi"></span>
+                        <span class="taxi"></span>
+                        <span class="taxi"></span>
+                        <span class="taxi"></span>
+                        <span class="lyft"></span>
+                        <span class="lyft"></span>
+                        <span class="lyft"></span>
+                        <span class="lyft"></span>
+                        <span class="lyft"></span>
+                    </p>
+                </div>
+                <div class="clear"></div>
+                <!--  -->
+                <h2>The Busiest Weekend</h2>
+                <p><b>December 1-3, 2017</b> was the busiest weekend of the year with December 2 the day with the most transactions. In the <b>59 hours</b> from 1pm on Friday afternoon west coast time until Sunday midnight more than a tenth of all public transactions of the year were made.</p>
+                <p class="bigno">
+                    <span class="number">2,342,411</span>
+                    <span class="caption">public transactions between Dec 1, 1:00pm - Dec 3, 11:59pm</span>
+                </p>
+                <p>Here are the most frequently used words found in the transaction messages that weekend. People were going out for drinks and food, but also responsibly paid rent. At the same time they used their free time to start preparing for Christmas.</p>
+                <ul id="decwe"></ul>
+                <div class="clear"></div>
+                <p>I have no doubt you can gain many more insights from this data set. Imagine having the dollar amounts of the transactions, too! Venmo which is owned by PayPal, has access to a wealth of data. This is just a tiny glimpse into it.</p>
+                <div class="clear"></div>
             </div>
         </div>
         <!--  -->

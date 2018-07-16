@@ -1,5 +1,6 @@
 .story-content>.timeline {
     width: 100vw;
+    max-width: none;
     left: 0;
     margin: 0;
     padding: 0;
@@ -7,65 +8,17 @@
         fill: $bright;
         fill-opacity: 0.25;
     }
-    .tooltipbg {
-        fill: $dull;
-        opacity: 0.9;
-    }
 }
 
-#story-content5>.timeline {
-    .cat1 {
-        fill: rgb(255, 0, 150);
-    }
-    .cat2 {
-        fill: rgb(10, 170, 60);
-    }
-    .line.cat1 {
-        stroke: rgb(255, 0, 150);
-        stroke-dasharray: 3, 3;
-        ;
-    }
-    .line.cat2 {
-        stroke: rgb(10, 170, 60);
-        stroke-dasharray: 3, 3;
-    }
-    .walmart {
-        fill: rgb(0, 0, 255);
-    }
-    .albertsons {
-        fill: rgb(255, 0, 0);
-    }
-    .costco {
-        fill: rgb(20, 200, 20);
-    }
-    .aldi,
-    .walgreens {
-        fill: black;
-    }
-}
-
-#story-content1>.timeline {
-    .cat1 {
-        fill: $bc2;
-    }
-    .cat2 {
-        fill: $dblue;
-    }
-}
-
-.story-content {
-    span {
-        padding: 0px 3px;
+#story-content5 {
+    >span {
         background-color: rgba(0, 0, 0, 0.15);
     }
     .cat1 {
         background-color: rgba(255, 0, 150, 0.4);
     }
     .cat2 {
-        background-color: rgba(10, 170, 60, 0.3);
-    }
-    .cat0 {
-        background-color: rgba(0, 74, 152, 0.25);
+        background-color: rgba(0, 74, 152, 0.3);
     }
     .walmart {
         background-color: rgba(0, 0, 255, 0.3);
@@ -75,6 +28,56 @@
     }
     .costco {
         background-color: rgba(20, 200, 20, 0.4);
+    }
+    >.timeline {
+        .line.cat1 {
+            stroke: rgb(255, 0, 150);
+            stroke-dasharray: 3, 3;
+            ;
+        }
+        .line.cat2 {
+            stroke: rgb(0, 74, 152);
+            stroke-dasharray: 3, 3;
+        }
+        .walmart {
+            fill: rgb(0, 0, 255);
+        }
+        .albertsons {
+            fill: rgb(255, 0, 0);
+        }
+        .costco {
+            fill: rgb(20, 200, 20);
+        }
+        .aldi,
+        .walgreens {
+            fill: black;
+        }
+        .cat1 {
+            fill: $bc2;
+        }
+        .cat2 {
+            fill: $dblue;
+        }
+        text {
+            font-size: 0.8em;
+        }
+    }
+}
+
+#story-content1 {
+    .cat0 {
+        background-color: rgba(23, 125, 8, 0.25);
+    }
+    .cat2 {
+        background-color: rgba(10, 170, 60, 0.3);
+    }
+    >.timeline {
+        .cat1 {
+            fill: $bc2;
+        }
+        .cat2 {
+            fill: $dgreen;
+        }
     }
 }
 
@@ -88,130 +91,205 @@
     }
 }
 
-.axis--y {
-    .tick {
-        text,
-        line {
-            opacity: 0.6;
-        }
-    }
-    .domain {
-        display: none;
-        opacity: 0.2;
+#activity {
+    .axis--x text {
+        text-anchor: end;
     }
 }
 
-.axis--y {
-    .tick {
-        text,
-        line {
-            opacity: 0.6;
-        }
-    }
-    .domain {
-        display: none;
-        opacity: 0.2;
-    }
-}
-
-svg.brush1,
-svg.brush2,
-svg.brush3,
-svg.brush4,
-svg.brush5 {
-    margin: 20px 0 20px;
-
-    .rect {
-        fill: #6f8483;
-    }
-
-    .msg {
-        fill: #000;
-        text-decoration: underline;
-    }
-
-    .context {
-        .highlight {
-            fill: $bright2;
-            opacity: 1;
-        }
-        .normal {
-            fill: #000;
-            opacity: 0.5;
-        }
-    }
-
-    .zoom {
-        cursor: move;
-        fill: #3dcffb;
-        opacity: 0.01;
-        pointer-events: all;
-    }
-
-    .selection {
-        fill: #111;
-        opacity: 0.2;
-    }
-
-    .handle {
-        opacity: 0.3;
-    }
-}
-
-svg .axisbg {
-    fill: $sky;
-}
-
-svg.packed4 {
-    padding: 60px 0 0 0;
-    background-image: url('media/calista_tongue.png');
-    background-repeat: no-repeat;
-    background-size: 300px;
-    background-position: top 20px left 50%;
-}
-
-svg.packed1,
-svg.packed2,
-svg.packed3,
-svg.packed4,
-svg.packed5 {
-    .node {
-        cursor: pointer;
-        transition: fill 0.2s;
-        fill: #fff;
-        fill-opacity: 0.8;
-    }
-
-    .node--tag:hover {
-        fill: #ffeeee;
-        fill-opacity: 0.8;
-    }
-
-    .node--leaf,
-    .node--root {
-        fill: none;
-    }
-
-    .smalllabel {
-        font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-
-    .label {
-        font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-        text-shadow: 0 1px 0 $sky, 1px 0 0 $sky, -1px 0 0 $sky, 0 -1px 0 $sky;
-        tspan {
+@media (min-width: 600px) {
+    #activity {
+        .axis--x text {
             text-anchor: middle;
         }
     }
+}
 
-    .label,
-    .smalllabel {
-        text-anchor: middle;
+.axis--y {
+    .tick {
+        text,
+        line {
+            opacity: 0.6;
+        }
+    }
+    .domain {
+        display: none;
+        opacity: 0.2;
+    }
+}
+
+.axis--y {
+    .tick {
+        text,
+        line {
+            opacity: 0.6;
+        }
+    }
+    .domain {
+        display: none;
+        opacity: 0.2;
+    }
+}
+
+// svg.brush1,
+// svg.brush2,
+// svg.brush3,
+// svg.brush4,
+// svg.brush5 {
+//     margin: 20px 0 20px;
+//     .rect {
+//         fill: #6f8483;
+//     }
+//     .msg {
+//         fill: #000;
+//         text-decoration: underline;
+//     }
+//     .context {
+//         .highlight {
+//             fill: $bright2;
+//             opacity: 1;
+//         }
+//         .normal {
+//             fill: #000;
+//             opacity: 0.5;
+//         }
+//     }
+//     .zoom {
+//         cursor: move;
+//         fill: #3dcffb;
+//         opacity: 0.01;
+//         pointer-events: all;
+//     }
+//     .selection {
+//         fill: #111;
+//         opacity: 0.2;
+//     }
+//     .handle {
+//         opacity: 0.3;
+//     }
+// }
+svg .axisbg {
+    fill: none;
+}
+
+//
+// svg.packed1,
+// svg.packed2,
+// svg.packed3,
+// svg.packed4,
+// svg.packed5 {
+//     .node {
+//         cursor: pointer;
+//         transition: fill 0.2s;
+//         fill: #fff;
+//         fill-opacity: 0.8;
+//     }
+//     .node--tag:hover {
+//         fill: #ffeeee;
+//         fill-opacity: 0.8;
+//     }
+//     .node--leaf,
+//     .node--root {
+//         fill: none;
+//     }
+//     .smalllabel {
+//         font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+//     }
+//     .label {
+//         font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+//         text-shadow: 0 1px 0 $sky, 1px 0 0 $sky, -1px 0 0 $sky, 0 -1px 0 $sky;
+//         tspan {
+//             text-anchor: middle;
+//         }
+//     }
+//     .label,
+//     .smalllabel {
+//         text-anchor: middle;
+//     }
+//     .label,
+//     .node--root,
+//     .node--leaf {
+//         // pointer-events: none;
+//     }
+// }
+#insights {
+    #lastnames {
+        .label {
+            font-size: 0.7em;
+            fill: $dblue;
+        }
+        .bar {
+            fill: $bright2;
+            fill-opacity: 0.5;
+        }
+    }
+    #activity {
+        .label {
+            font-size: 0.7em;
+            fill: #333;
+        }
+        .bar {
+            fill: $bc2;
+            fill-opacity: 0.3;
+        }
+    }
+    #pizza {
+        text-align: center;
+        .label {
+            text-anchor: middle;
+            font-size: 0.8em;
+            &:not(:nth-of-type(4)):not(:nth-of-type(9)):not(:nth-of-type(10)):not(:nth-of-type(11)):not(:nth-of-type(12)) {
+                display: none;
+            }
+        }
+        .bar {
+            fill: $yellow;
+            fill-opacity: 0.3;
+        }
+    }
+    #rent {
+        text-align: center;
+        .label {
+            text-anchor: middle;
+            font-size: 0.8em;
+            &:not(:nth-of-type(1)):not(:nth-of-type(2)):not(:nth-of-type(15)):not(:nth-of-type(30)) {
+                display: none;
+            }
+        }
+        .bar {
+            fill: $bc2;
+            fill-opacity: 0.3;
+        }
     }
 
-    .label,
-    .node--root,
-    .node--leaf {
-        // pointer-events: none;
+    #lastnames,
+    #activity,
+    #pizza,
+    #rent {
+        .bar:hover {
+            fill: $lyellow;
+            fill-opacity: 1;
+        }
+    }
+
+    text {
+        font-size: 14px;
+    }
+
+    .axis--x path {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    #pizza {
+        .axis--x .tick:not(:nth-of-type(1)):not(:nth-of-type(4)):not(:nth-of-type(8)):not(:nth-of-type(12)) {
+            display: none;
+        }
+    }
+    #rent {
+        .axis--x .tick:not(:nth-of-type(1)):not(:nth-of-type(15)):not(:nth-of-type(31)) {
+            display: none;
+        }
     }
 }

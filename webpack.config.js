@@ -1,13 +1,15 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 
 // static files
 const copyPatterns = [
-    { from: "./src/media", to: "./media" },
-    { from: "./src/data", to: "./data" }
+    { from: "./src/media", to: "./media" }
+    // { from: "./src/data", to: "./data" }
 ]
 
 const extractSass = new ExtractTextPlugin({
@@ -29,14 +31,36 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
-    plugins: [
+    plugins: process.env.NODE_ENV !== 'prod' ? [
         new HTMLWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',
-            favicon: './src/media/god-cloud.png',
+            favicon: './src/favicon.png',
             hash: true
         }),
         extractSass,
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                postcss: [autoprefixer]
+            }
+        }),
+        new CopyWebpackPlugin(copyPatterns),
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
+    ] : [
+        new CleanWebpackPlugin(['dist']),
+        new HTMLWebpackPlugin({
+            template: './src/index.html',
+            filename: 'index.html',
+            favicon: './src/favicon.png',
+            hash: true
+        }),
+        extractSass,
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                postcss: [autoprefixer]
+            }
+        }),
         new CopyWebpackPlugin(copyPatterns),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
@@ -50,6 +74,8 @@ module.exports = {
                 loader: 'css-loader',
                 options: { url: false }
             }, {
+                loader: 'postcss-loader'
+            }, {
                 loader: 'sass-loader'
             }] : ExtractTextPlugin.extract({
                 fallback: 'style-loader',
@@ -59,6 +85,12 @@ module.exports = {
                             // See https://github.com/webpack-contrib/css-loader#url
                             url: false,
                             minimize: true,
+                            sourceMap: false
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
                             sourceMap: false
                         }
                     },
