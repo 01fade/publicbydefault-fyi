@@ -493,6 +493,10 @@ button.big,
         width: 100%;
         max-width: 300px;
     }
+    img.demo {
+        width: 100%;
+        border: 1px solid #ddd;
+    }
     button.close {
         z-index: 1;
         position: absolute;
@@ -549,7 +553,7 @@ button.big,
 }
 
 #privacy {
-    background-color: #fff;
+    background-color: #f9f9f9;
     .container {
         >* {
             text-align: left;
